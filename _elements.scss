@@ -180,7 +180,7 @@
 }
 
 
-@mixin transform($arguments) { 
+@mixin transform($arguments...) { 
 	-webkit-transform: $arguments;
 	-moz-transform:    $arguments;
 	-ms-transform:     $arguments;
