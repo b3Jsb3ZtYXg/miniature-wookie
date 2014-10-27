@@ -12,24 +12,6 @@
     #{$property}:         calc(#{$expression});    
 }
 
-@mixin media($property, $value){
-    @media screen and (#{$property}: #{$value}){
-    	@content;
-    }
-}
-
-@mixin media2($property1, $value1, $property2, $value2){
-    @media screen and (#{$property1}: #{$value1}) and (#{$property2}: #{$value2}){
-    	@content;
-    }
-}
-
-@mixin media3($property1, $value1, $property2, $value2, $property3, $value3){
-    @media screen and (#{$property1}: #{$value1}) and (#{$property2}: #{$value2}) and (#{$property3}: #{$value3}){
-    	@content;
-    }
-}
-
 @mixin hidentext { 
 	text-indent: 100%;
 	white-space: nowrap;
