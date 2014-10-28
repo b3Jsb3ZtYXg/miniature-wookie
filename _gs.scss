@@ -1,0 +1,163 @@
+/* =========================================================
+   Fluid grid system for scss
+   ========================================================= */
+$gs_width: 100%;
+$gs_gutter-width: 0; 
+$gs_gutter-height: 0;
+ 
+$column_total-count: 12;	
+$column_gutter-height: 1%;	
+$column_gutter-width: 1%;	
+
+/* Predefined class names for generator */
+// $gs-container: 'gs-container';
+// $gs-column: 'gs-column';
+// $gs-row: 'gs-row';
+// $gs-push: 'gs-push';
+// $gs-pull: 'gs-pull';
+
+
+/* Clearfix */
+%gs_clear{
+	clear:both;
+	&:before,
+	&:after {
+	    display: block;
+		content: '';
+		clear: both;
+		height: 0;
+	}
+}    
+
+/* GS math */
+
+@function gs($gs_width, $gs_gutter-width){
+	@if ($gs_gutter-width != auto){	
+		@return $gs_width - $gs_gutter-width;
+	} @else {
+		@return $gs_width;
+	}	
+}
+
+@function gs-gutter($gs_gutter-height, $gs_gutter-width){
+	@if ($column_gutter-width == auto){
+		@return ($gs_gutter-height)/2 $gs_gutter-width;
+	} @else{
+		@return ($gs_gutter-height)/2 ($gs_gutter-width)/2;
+	}		
+}
+
+@function column($column_count, $column_total-count, $column_gutter-width, $gs-width){
+	@if ($gs_width == 100%){
+	  	@return (($gs-width/$column_total-count)*$column_count) - ($column_gutter-width);
+	}@else{
+		@return (($gs-width/$column_total-count)*$column_count) - ($column_gutter-width);
+	}
+}
+
+@function column-gutter($column_gutter-height, $column_gutter-width){
+	@return ($column_gutter-height)/2 ($column_gutter-width)/2;		
+}
+
+@function row($gs_width, $column_gutter-width){
+	@if ($column_gutter-width != auto){	
+		@return $gs-width - $column_gutter-width;
+	} @else {
+		@return $gs-width;
+	}	
+}
+
+@function row-gutter($column_gutter-height, $column_gutter-width){
+	@if ($column_gutter-width == auto){
+		@return ($column_gutter-height)/2 $column_gutter-width;
+	} @else{
+		@return ($column_gutter-height)/2 ($column_gutter-width)/2;
+	}		
+}
+
+@function position($column_count, $column_total-count, $column_gutter-width, $gs_width){
+	@return (($gs-width/$column_total-count)*$column_count) + ($column_gutter-width)/2;
+}
+
+/* GS Mixins */
+
+/* Grid system container mixin, should be used for grid container.
+* It very similar to row mixin and use the same functions
+*/
+
+@mixin gs( 
+	$gs_width: $gs_width, 
+	$gs_gutter-height: $gs_gutter-height,	
+	$gs_gutter-width: $gs_gutter-width){	
+	width: gs($gs_width, $gs_gutter-width);
+	margin: gs-gutter($gs_gutter-height, $gs_gutter-width);	
+	@extend %gs_clear;
+}
+
+/*column mixin: there are five variables, column count for current element, 
+* total column count in row, horizontal gutter and vertical gutter
+* By default it sets to 1 column of 12 total columns without gutters. 
+* Note, that gutter sets in percents, not pixels.*/
+
+@mixin gs-column(
+	$column_count, 
+	$column_total-count: $column_total-count, 
+	$column_gutter-height: $column_gutter-height,	
+	$column_gutter-width: $column_gutter-width, 
+	$gs-width: $gs-width){ 
+	float: left;
+	width: column($column_count, $column_total-count, $column_gutter-width, $gs_width);
+	margin: column-gutter($column_gutter-height, $column_gutter-width);	
+} 	
+
+/*row-column - column with clearfix, that allows to move it to the new line. Useful for nested grids.*/
+	
+@mixin gs-row( 
+	$gs_width: $gs_width, 
+	$column_gutter-height: $column_gutter-height,	
+	$column_gutter-width: $column_gutter-width){	
+	width: row($gs_width, $column_gutter-width);
+	margin: row-gutter($column_gutter-height, $column_gutter-width);	
+	@extend %gs_clear;
+}
+
+/*offset mixin allows to push column left or right on some distance. Expected settings: distance-column count to move on, total column count in row, horizontal gutter like in other columns. 
+By default	it sets to 1 column of 12 total columns without gutters. Gutter units - percents*/
+
+@mixin gs-push(
+	$column_count, 
+	$column_total-count: $column_total-count, 
+	$column_gutter-width: $column_gutter-width, 
+	$gs_width: $gs_width){ 
+	margin-left:  position($column_count, $column_total-count, $column_gutter-width, $gs_width);
+} 
+
+@mixin gs-pull(
+	$column_count, 
+	$column_total-count: $column_total-count, 
+	$column_gutter-width: $column_gutter-width, 
+	$gs_width: $gs_width){ 
+	margin-right:  position($column_count, $column_total-count, $column_gutter-width, $gs_width);
+} 
+
+
+/* Generate classnames for grid */
+// .#{$gs-container}{
+// 	@include gs();
+// }
+// .#{$gs-row}{
+// 	@include gs-row();
+// }
+// @for $i from 1 through $column_total-count{
+// 	.#{$gs-column}-#{$i}{
+// 		@include gs-column($i);
+// 	}
+// }
+// @for $i from 1 through ($column_total-count - 1){	
+// 	.#{$gs-push}-#{$i}{
+// 		@include gs-push($i);
+// 	}
+// 	.#{$gs-pull}-#{$i}{
+// 		@include gs-pull($i);
+// 	}
+// }
