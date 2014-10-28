@@ -4,7 +4,8 @@
 $gs_width: 100%;
 $gs_gutter-width: 0; 
 $gs_gutter-height: 0;
- 
+
+$column_count: 1;  
 $column_total-count: 12;	
 $column_gutter-height: 1%;	
 $column_gutter-width: 1%;	
@@ -100,7 +101,7 @@ $column_gutter-width: 1%;
 * Note, that gutter sets in percents, not pixels.*/
 
 @mixin gs-column(
-	$column_count, 
+	$column_count: $column_count, 
 	$column_total-count: $column_total-count, 
 	$column_gutter-height: $column_gutter-height,	
 	$column_gutter-width: $column_gutter-width, 
@@ -125,7 +126,7 @@ $column_gutter-width: 1%;
 By default	it sets to 1 column of 12 total columns without gutters. Gutter units - percents*/
 
 @mixin gs-push(
-	$column_count, 
+	$column_count: $column_count, 
 	$column_total-count: $column_total-count, 
 	$column_gutter-width: $column_gutter-width, 
 	$gs_width: $gs_width){ 
@@ -133,7 +134,7 @@ By default	it sets to 1 column of 12 total columns without gutters. Gutter units
 } 
 
 @mixin gs-pull(
-	$column_count, 
+	$column_count: $column_count, 
 	$column_total-count: $column_total-count, 
 	$column_gutter-width: $column_gutter-width, 
 	$gs_width: $gs_width){ 
