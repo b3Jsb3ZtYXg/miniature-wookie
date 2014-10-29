@@ -5,7 +5,7 @@ $gs_width: 100%;
 $gs_gutter-width: 0; 
 $gs_gutter-height: 0;
 
-$column_count: 1;  
+$column_count: 1; 
 $column_total-count: 12;	
 $column_gutter-height: 1%;	
 $column_gutter-width: 1%;	
@@ -48,11 +48,11 @@ $column_gutter-width: 1%;
 	}		
 }
 
-@function column($column_count, $column_total-count, $column_gutter-width, $gs-width){
+@function column($column_count, $column_total-count, $column_gutter-width, $gs_width){
 	@if ($gs_width == 100%){
-	  	@return (($gs-width/$column_total-count)*$column_count) - ($column_gutter-width);
+	  	@return (($gs_width/$column_total-count)*$column_count) - ($column_gutter-width);
 	}@else{
-		@return (($gs-width/$column_total-count)*$column_count) - ($column_gutter-width);
+		@return (($gs_width/$column_total-count)*$column_count) - ($column_gutter-width);
 	}
 }
 
@@ -60,24 +60,8 @@ $column_gutter-width: 1%;
 	@return ($column_gutter-height)/2 ($column_gutter-width)/2;		
 }
 
-@function row($gs_width, $column_gutter-width){
-	@if ($column_gutter-width != auto){	
-		@return $gs-width - $column_gutter-width;
-	} @else {
-		@return $gs-width;
-	}	
-}
-
-@function row-gutter($column_gutter-height, $column_gutter-width){
-	@if ($column_gutter-width == auto){
-		@return ($column_gutter-height)/2 $column_gutter-width;
-	} @else{
-		@return ($column_gutter-height)/2 ($column_gutter-width)/2;
-	}		
-}
-
 @function position($column_count, $column_total-count, $column_gutter-width, $gs_width){
-	@return (($gs-width/$column_total-count)*$column_count) + ($column_gutter-width)/2;
+	@return (($gs_width/$column_total-count)*$column_count) + ($column_gutter-width)/2;
 }
 
 /* GS Mixins */
@@ -115,10 +99,10 @@ $column_gutter-width: 1%;
 	
 @mixin gs-row( 
 	$gs_width: $gs_width, 
-	$column_gutter-height: $column_gutter-height,	
-	$column_gutter-width: $column_gutter-width){	
-	width: row($gs_width, $column_gutter-width);
-	margin: row-gutter($column_gutter-height, $column_gutter-width);	
+	$gs_gutter-height: $gs_gutter-height,	
+	$gs_gutter-width: $gs_gutter-width){	
+	width: gs($gs_width, $gs_gutter-width);
+	margin: gs-gutter($gs_gutter-height, $gs_gutter-width);	
 	@extend %gs_clear;
 }
 
