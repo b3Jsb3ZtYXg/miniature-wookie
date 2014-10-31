@@ -21,21 +21,26 @@ $column_gutter-width-fallback: 1%;
 // $gs-push: 'gs-push';
 // $gs-pull: 'gs-pull';
 
-
-/* Clearfix */
-%gs_clear{
-	clear:both;
-	&:before,
-	&:after {
-	    display: block;
-		content: '';
-		clear: both;
-		height: 0;
+/*Internal mixins */
+	/* Calc() mixin */
+	@mixin calc($property, $expression){
+		#{$property}: -webkit-calc(#{$expression});
+	    #{$property}:    -moz-calc(#{$expression});
+	    #{$property}:         calc(#{$expression});    
 	}
-}
+	/* Clearfix */
+	%gs_clear{
+		clear:both;
+		&:before,
+		&:after {
+		    display: block;
+			content: '';
+			clear: both;
+			height: 0;
+		}
+	}
 
 /* GS Mixins */
-
 	/* Grid system container mixin, should be used for grid container and rows. */
 		@mixin gs( 
 			$gs_width: $gs_width, 
