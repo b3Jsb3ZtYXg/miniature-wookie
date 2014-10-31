@@ -4,15 +4,15 @@
 $gs_width: 100%;
 $gs_gutter-width: 0; 
 $gs_gutter-height: 0;
-$gs_gutter-width-fallback: 1%;	
+$gs_gutter-width-fallback: 2%;	
 
 $column_count: 1; 
 $column_total-count: 12;
-$column_height: auto;	
-$column_gutter-height: 1%;	
-$column_gutter-width: 1%;	
-$column_gutter-height-fallback: 1%;	
-$column_gutter-width-fallback: 1%;	
+$column_gutter-height: 2%;	
+$column_gutter-width: 2%;	
+$column_gutter-height-fallback: 2%;	
+$column_gutter-width-fallback: 2%;
+$column_height: auto;		
 
 /* Predefined class names for generator */
 // $gs-container: 'gs-container';
@@ -96,22 +96,23 @@ $column_gutter-width-fallback: 1%;
 		@mixin gs-column(
 			$column_count: $column_count, 
 			$column_total-count: $column_total-count, 
-			$column_gutter-height: $column_gutter-height,	
 			$column_gutter-width: $column_gutter-width, 
-			$gs-width: $gs-width, 
-			$column_gutter-height-fallback: $column_gutter-width-fallback, 
-			$column_gutter-width-fallback: $column_gutter-height-fallback){ 
+			$column_gutter-height: $column_gutter-height,
+			$column-height: $column-height,
+			$column_gutter-width-fallback: $column_gutter-width-fallback, 
+			$column_gutter-height-fallback: $column_gutter-height-fallback,	
+			$gs-width: $gs-width){ 
 
 			float: left;
 
 			/* Grid gutter width and margin math for calc() and fallback */
-			$half-gutter-height: ($column_gutter-height)/2;
 			$half-gutter-width: ($column_gutter-width)/2;
+			$half-gutter-height: ($column_gutter-height)/2;
 			$half-gutter-width-fallback: ($column_gutter-width-fallback)/2;
+			$half-gutter-height-fallback: ($column_gutter-height-fallback)/2;		 	
 			
-			/* Column width math for calc() and fallback */
-		 	$column_width: ($gs_width/$column_total-count)*$column_count;
-			
+		/* Column width math */	
+			$column_width: ($gs_width/$column_total-count)*$column_count;
 			/* Check gutter width and it fallback for `auto` values, if false - return no math variant */
 			@if ($column_gutter-width != auto) and ($column_gutter-width-fallback != auto){
 
@@ -126,9 +127,10 @@ $column_gutter-width-fallback: 1%;
 						unitless($column_gutter-width-fallback) == false){
 
 						width: $column_width - $column_gutter-width-fallback;	
-						@include calc(width, #{$column_width} - #{$column_gutter-width});
-											
-						margin: $half-gutter-height $half-gutter-width-fallback;
+						@include calc(width, #{$column_width} - #{$column_gutter-width});											
+						
+						margin-left: $half-gutter-width-fallback;
+						margin-right: $half-gutter-width-fallback;
 						@include calc(margin-left, $half-gutter-width);
 						@include calc(margin-right, $half-gutter-width);
 					
@@ -139,11 +141,51 @@ $column_gutter-width-fallback: 1%;
 					}
 				} @else{
 					width: $column_width - $column_gutter-width;
-					margin: $half-gutter-height $half-gutter-width;
+					margin-left: $half-gutter-width;
+					margin-right: $half-gutter-width;
 				}
 			} @else {
 				width: $column_width;
-				margin: $half-gutter-height $column_gutter-width;
+				margin-left: $column_gutter-width;
+				margin-right: $column_gutter-width;
+			}
+
+		/* Column height math */
+			/* Check gutter height and it fallback for `auto` values, if false - return no math variant */
+			@if ($column_gutter-height != auto) and ($column_gutter-height-fallback != auto){
+
+				/* Check gutter value, if its units not equal to grid units - return calc math with fallback<
+				 * else - common math */ 
+				@if unit($column_gutter-height) != unit($column_height) and 
+					unitless($column_gutter-height) == false{
+
+					/* Check gutter fallback value for valid  units, 
+				 	 * if true - continue math with calc() property and fallback*/	
+					@if (unit($column_gutter-height-fallback) == unit($column_height) and 
+						unitless($column_gutter-height-fallback) == false){
+
+						height: $column_height - $column_gutter-height-fallback;	
+						@include calc(height, #{$column_height} - #{$column_gutter-height});
+											
+						margin-top: $half-gutter-height-fallback;
+						margin-bottom: $half-gutter-height-fallback;
+						@include calc(margin-top, $half-gutter-height);
+						@include calc(margin-bottom, $half-gutter-height);
+					
+					} @else{
+						
+						@error "Fallback gutter units must be the same as column height units `#{unit($column_height)}`";
+						
+					}
+				} @else{
+					height: $column_height - $column_gutter-height;
+					margin-top: $half-gutter-height;
+					margin-bottom: $half-gutter-height;
+				}
+			} @else {
+				height: $column_height;
+				margin-top: $column_gutter-height;
+				margin-bottom: $column_gutter-height;
 			}
 		} 
 
