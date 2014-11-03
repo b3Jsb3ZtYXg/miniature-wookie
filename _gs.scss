@@ -152,7 +152,7 @@ $column_height: auto;
 
 		/* Column height math */
 			/* Check gutter height and it fallback for `auto` values, if false - return no math variant */
-			@if ($column_gutter-height != auto) and ($column_gutter-height-fallback != auto){
+			@if ($column_gutter-height != auto) and ($column_gutter-height-fallback != auto) and ($column_height != auto){
 
 				/* Check gutter value, if its units not equal to grid units - return calc math with fallback<
 				 * else - common math */ 
@@ -161,7 +161,7 @@ $column_height: auto;
 
 					/* Check gutter fallback value for valid  units, 
 				 	 * if true - continue math with calc() property and fallback*/	
-					@if (unit($column_gutter-height-fallback) == unit($gs_width) and 
+					@if (unit($column_gutter-height-fallback) == unit($column_height) and 
 						unitless($column_gutter-height-fallback) == false){
 
 						height: $column_height - $column_gutter-height-fallback;	
