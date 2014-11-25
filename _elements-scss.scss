@@ -18,6 +18,17 @@
 	overflow: hidden;
 }
 
+@mixin selection($text-color: #333, $bg-color: #efefef){
+	*::selection {
+		color: $text-color;
+		background: $bg-color;
+	}
+	*::-moz-selection {
+	    color: $text-color;
+	    background: $bg-color;
+	}
+}
+
  
 @mixin clearfix { 
 

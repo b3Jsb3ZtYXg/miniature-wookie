@@ -31,7 +31,7 @@ Also you can visit project [home page](http://orlovmax.com/lab/tools/miniature-w
 
 ### Layout tools
 It's nice set with two mixins, that allows to develop on the principle of pixel-perfect. It contains two separate mixins: first - layout mixin, the second - graph paper that positioned over the page.
-Usage is very simple: first you need to import the library and apply mixin to <body> tag, with desired options. This will result in the imposition of `layout.jpg` over web page. Image width will be equal to 100% and opacity - 50%. Optionally available "graph paper" default grid is not shown because its opacity is equal to zero. See more at [_layout-tools_README](https://github.com/orlovmax/lab/blob/master/miniature-wookie/layout-tools_README.md) or in [this tutorial](http://orlovmax.com/lab/tools/pixel-perfect-dev).
+Usage is very simple: first you need to import the library and apply mixin to <body> tag, with desired options. This will result in the imposition of `layout.jpg` over web page. Image width will be equal to 100% and opacity - 50%. Optionally available "graph paper" default grid is not shown because its opacity is equal to zero. See more at [_layout-tools_README](https://github.com/orlovmax/lab/blob/master/miniature-wookie/layout-tools_README.md).
 Also you can visit project [home page](http://orlovmax.com/lab/tools/pixel-perfect-dev) for some details, demos and tutorials.
 
 ## Conclusion
@@ -42,7 +42,6 @@ Grid system mixin lib was created for one of my bicycles - Inclusion framework. 
 Layout tools - just quick-created mixin for pixel perfect dev. Put layout image as semi-transparent background to the body tag. That's easy and useful.
 
 ## TODO
-* GS readme.md
 * Less grid system
 * Extends and generated classes for grid system
 

@@ -29,6 +29,17 @@ Example of usage:
 @include hidentext;
 ```
 ---
+**Selection**, this mixin allows to customize text color and background color of selected text.
+
+Inner variables and defaults: 
+```css
+@mixin selection($text-color: #333, $bg-color: #efefef);
+```
+Example of usage: 
+```css
+@include selection(#f00, #000);
+```
+---
 **Clear-fix for parents that contain float elements**
 
 No inner variables
@@ -53,11 +64,11 @@ Example of usage:
 
 Inner variables and defaults: 
 ```css
-.box-sizing($sizing: border-box);
+@mixin box-sizing($sizing: border-box);
 ```
 Example of usage:
 ```css
-.box-sizing(border-box);
+@include box-sizing(border-box);
 ```
 
 ---
@@ -345,11 +356,11 @@ Create css multiple columns. One by default
 
 Inner variables and defaults: 
 ```css
-.col-count($count: 1);
+@mixin col-count($count: 1);
 ```
 Example of usage:
 ```css
-.col-count($count: 5);
+@include col-count($count: 5);
 ```
 ---
 **Column gap**. 
@@ -357,9 +368,9 @@ Gap between css multiple columns
 
 Inner variables and defaults: 
 ```css
-.col-gap($gap: 0);
+@mixin col-gap($gap: 0);
 ```
 Example of usage:
 ```css
-.col-gap($gap: 10px);
+@include col-gap($gap: 10px);
 ```
