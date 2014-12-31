@@ -89,10 +89,8 @@ $column_height: auto;
 			@extend %gs_clear;
 		}
 
-	/* Column mixin: there are five variables, column count for current element, 
-	 * total column count in row, horizontal gutter and vertical gutter
-	 * By default it sets to 1 column of 12 total columns without gutters. 
-	 * Note, that gutter sets in percents, not pixels.*/
+	/* Column mixin has next variables: column count for current element, total column count in row, horizontal gutter and vertical gutter and their fallbacks. 
+	 * By default it sets to 1 column of 12 total columns wit 2% gutters. */
 		@mixin gs-column(
 			$column_count: $column_count, 
 			$column_total-count: $column_total-count, 
@@ -191,7 +189,7 @@ $column_height: auto;
 
 	/* Offset mixin allows to push column left or right on some distance. 
 	 * Expected settings: distance-column count to move on, total column count in row, horizontal gutter like in other columns. 
-	 * By default	it sets to 1 column of 12 total columns without gutters. Gutter units - percents*/
+	 * By default it sets to 1 column of 12 total columns with 2% gutters. */
 		@mixin gs-push(
 			$column_count: $column_count, 
 			$column_total-count: $column_total-count, 
