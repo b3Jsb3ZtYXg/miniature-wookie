@@ -46,6 +46,8 @@ Layout tools - just quick-created mixin for pixel perfect dev. Put layout image 
 * Extends and generated classes for grid system
 
 ## Changelog
+* (January 11, 2015)
+    - Sass version added
 * (November 16, 2014)
     - Demo and readme added
 * (November 3, 2014)
