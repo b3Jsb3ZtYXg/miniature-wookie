@@ -36,25 +36,25 @@ Basic mixins and defaults
 
 *Default settings and variables*
 
-`.layout(@layout-url: "../img/layout.jpg", @layout-width:100%, @layout-opacity: .5, @grid-opacity:0, @cell-width:10px, @cell-height:10px, @line-color:#fff);` - There are bunch of options as layout url(by default it sets to "../img/layout.jpg", so it seems that your layout in img folder that on the same level as css folder with current style), layout width(100% by default, you should set to width of layout picture), layout opacity(by default sets to 0.5) and graphing paper grid options - grid opacity( 0 as default option), cell width(10px by default), cell height(10px by default), line color(#fff by default).
+`.layout(@layout-url: "../img/layout.jpg", @position: auto, @layout-opacity: .5, @grid-opacity:0, @cell-width:10px, @cell-height:10px, @line-color:#fff);` - There are bunch of options as layout url(by default it sets to "../img/layout.jpg", so it seems that your layout in img folder that on the same level as css folder with current style), position(auto by default), layout opacity(by default sets to 0.5) and graphing paper grid options - grid opacity( 0 as default option), cell width(10px by default), cell height(10px by default), line color(#fff by default).
 
 *Use example:*
 
-Layout without grid `.layout("../img/layout.jpg", .5, 1275px)` - there is image layout called layout.jpg with 50% transparency and max-width 1275px. You can see result on the second screenshot
+Layout without grid `.layout("../img/layout.jpg", .5)` - there is image layout called layout.jpg with 50% transparency. You can see result on the second screenshot
 
-Layout with grid `.layout("../img/layout.jpg", .5, 1275px, .4, 10px, 10px, #2c3e50)` - there is image layout called layout.jpg with 50% transparency, max-width 1275px and graph paper grid with 10x10px cells, 40% transparency and line color #2c3e50. See result on third screen.
+Layout with grid `.layout("../img/layout.jpg", -200px, .5, .4, 10px, 10px, #2c3e50)` - there is image layout called layout.jpg with 50% transparency, left positioned by -200px and includes graph paper grid with 10x10px cells, 40% transparency and line color #2c3e50. See result on third screen.
 
 **Graph paper mixin in scss**
 
 *Default settings and variables*
 
-`@mixin layout($layout-url: "../img/layout.jpg", $layout-opacity: .5, @layout-width:100%, $grid-opacity:0, $cell-width:10px, $cell-height:10px, $line-color:#fff);` - There are bunch of options as layout url(by default it sets to "../img/layout.jpg", so it seems that your layout in img folder that on the same level as css folder with current style), layout width(100% by default, you should set to width of layout picture), layout opacity(by default sets to 0.5) and graphing paper grid options - grid opacity( 0 as default option), cell width(10px by default), cell height(10px by default), line color(#fff by default).
+`@mixin layout($layout-url: "../img/layout.jpg", $position: auto, $layout-opacity: .5, $grid-opacity:0, $cell-width:10px, $cell-height:10px, $line-color:#fff);` - There are bunch of options as layout url(by default it sets to "../img/layout.jpg", so it seems that your layout in img folder that on the same level as css folder with current style), position(auto by default), layout opacity(by default sets to 0.5) and graphing paper grid options - grid opacity( 0 as default option), cell width(10px by default), cell height(10px by default), line color(#fff by default).
 
 *Use example:*
 
-Layout without grid `@include layout("../img/layout.jpg", .5, 1275px)` - there is image layout called layout.jpg with 50% transparency and  max-width 1275px. You can see result on the second screenshot
+Layout without grid `@include layout("../img/layout.jpg", .5)` - there is image layout called layout.jpg with 50% transparency. You can see result on the second screenshot
 
-Layout with grid `@include layout("../img/layout.jpg", .5, 1275px, .4, 10px, 10px, #2c3e50)` - there is image layout called layout.jpg with 50% transparency, max-width 1275px and graph paper grid with 10x10px cells, 40% transparency and line color #2c3e50. See result on third screen.
+Layout with grid `@include layout("../img/layout.jpg", -200px, .5, .4, 10px, 10px, #2c3e50)` - there is image layout called layout.jpg with 50% transparency, left positioned by -200px and includes graph paper grid with 10x10px cells, 40% transparency and line color #2c3e50. See result on third screen.
 
 ---
 
