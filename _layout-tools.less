@@ -54,10 +54,8 @@
   &:before{    
     content: url(@layout-url);
     position: absolute;
-    .pos(@position) when not (@position = auto) {
-      top: 0;
-      left: @position;
-    }
+    top: 0;
+    left: @position;
     z-index: 100;
     display: inline-block;
     width: 100%;
