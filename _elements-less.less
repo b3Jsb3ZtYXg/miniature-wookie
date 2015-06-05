@@ -25,7 +25,7 @@
 }
 
 
-.opacity(@opacity: 0.5) { 
+.opac(@opacity: 0.5) { 
 	-webkit-opacity: @opacity;
 	-khtml-opacity:  @opacity;
 	-moz-opacity:    @opacity;
@@ -33,7 +33,7 @@
 }
 
 
-.box-sizing(@sizing: border-box) { 
+.sizing(@sizing: border-box) { 
 	-webkit-box-sizing: @sizing;
 	-moz-box-sizing:    @sizing;
 	-ms-box-sizing:     @sizing;
@@ -47,7 +47,7 @@
 }
 
 
-.user-select(...) { 
+.u-select(...) { 
 	-webkit-user-select: @arguments;
 	-moz-user-select:    @arguments;
 	-ms-user-select:     @arguments;
@@ -77,14 +77,14 @@
 	border-radius:         @radius;
 }
 
-.border-radius(@top-left: 5px, @top-right: 5px, @bottom-right: 5px, @bottom-left: 5px) { 
+.radius(@top-left: 5px, @top-right: 5px, @bottom-right: 5px, @bottom-left: 5px) { 
 	-webkit-border-radius: @top-left @top-right @bottom-right @bottom-left;
 	-moz-border-radius:    @top-left @top-right @bottom-right @bottom-left;
 	border-radius:         @top-left @top-right @bottom-right @bottom-left;
 }
 
 
-.linear-gradient(@angle-position: top, @start-color: #fff, @end-color: #000, @fallback-color: @start-color)	{ 
+.l-gradient(@angle-position: top, @start-color: #fff, @end-color: #000, @fallback-color: @start-color)	{ 
 	background: @fallback-color;
 	background-image: -webkit-gradient(linear, @angle-position, from(@start-color), to(@end-color));
 	background:                  -webkit-linear-gradient(@angle-position, @start-color, @end-color);
@@ -95,20 +95,20 @@
 }
 
 
-.box-shadow(@hoff: 1px, @voff: 1px, @blur: 2px, @spread: 0, @color: #000){ 
+.shadow(@hoff: 1px, @voff: 1px, @blur: 2px, @spread: 0, @color: #000){ 
 	-webkit-box-shadow: @hoff @voff @blur @spread @color;
 	-moz-box-shadow:    @hoff @voff @blur @spread @color;
 	box-shadow:         @hoff @voff @blur @spread @color;
 }
  
-.inset-box-shadow(@hoff: 1px, @voff: 1px, @blur: 2px, @spread: 0, @color: #000){ 
+.inset-shadow(@hoff: 1px, @voff: 1px, @blur: 2px, @spread: 0, @color: #000){ 
 	-webkit-box-shadow: inset @hoff @voff @blur @spread @color;
 	-moz-box-shadow:    inset @hoff @voff @blur @spread @color;
 	box-shadow:         inset @hoff @voff @blur @spread @color;
 }
 
 
-.animation(@animation-name:first, @animation-duration:1s, @animation-tfunction:linear, @animation-delay:0s, @animation-iteration:infinite, @animation-direction:normal, @animation-play-state:running){
+.animate(@animation-name:first, @animation-duration:1s, @animation-tfunction:linear, @animation-delay:0s, @animation-iteration:infinite, @animation-direction:normal, @animation-play-state:running){
 	-webkit-animation: @animation-name @animation-duration @animation-tfunction @animation-delay @animation-iteration @animation-direction;
 			animation: @animation-name @animation-duration @animation-tfunction @animation-delay @animation-iteration @animation-direction;
 	-webkit-animation-play-state: @animation-play-state;
@@ -116,7 +116,7 @@
 }
 
 
-.transform(...) { 
+.transf(...) { 
 	-webkit-transform: @arguments;
 	-moz-transform:    @arguments;
 	-ms-transform:     @arguments;
@@ -132,7 +132,7 @@
             transform-origin: @X-axis @Y-axis @Z-axis;
 }
 	
-.rotate(@rotate-angle: 0){ 
+.t-rotate(@rotate-angle: 0){ 
 	-webkit-transform: rotate(@rotate-angle);
 	-moz-transform:    rotate(@rotate-angle);
 	-ms-transform:     rotate(@rotate-angle);
@@ -141,7 +141,7 @@
 }
 
 
-.scale(@scale: 1){ 
+.t-scale(@scale: 1){ 
 	-webkit-transform: scale(@scale);
 	-moz-transform:    scale(@scale);
 	-ms-transform:     scale(@scale);
@@ -149,7 +149,7 @@
 	transform:         scale(@scale);
 }
  
-.scaleXY(@scaleX: 1, @scaleY: 1){ 
+.t-scaleXY(@scaleX: 1, @scaleY: 1){ 
 	-webkit-transform: scale(@scaleX, @scaleY);
 	-moz-transform:    scale(@scaleX, @scaleY);
 	-ms-transform:     scale(@scaleX, @scaleY);
@@ -157,7 +157,7 @@
 	transform:         scale(@scaleX, @scaleY);
 }
  
-.scaleX(@scaleX: 1){ 
+.t-scaleX(@scaleX: 1){ 
 	-webkit-transform: scaleX(@scaleX);
 	-moz-transform:    scaleX(@scaleX);
 	-ms-transform:     scaleX(@scaleX);
@@ -165,7 +165,7 @@
 	transform:         scaleX(@scaleX);
 }
  
-.scaleY(@scaleY: 1){ 
+.t-scaleY(@scaleY: 1){ 
 	-webkit-transform: scaleY(@scaleY);
 	-moz-transform:    scaleY(@scaleY);
 	-ms-transform:     scaleY(@scaleY);
@@ -174,7 +174,7 @@
 }
 
  
-.skew(@skewX-angle: 0, @skewY-angle: 0){ 
+.t-skew(@skewX-angle: 0, @skewY-angle: 0){ 
 	-webkit-transform: skew(@skewX-angle, @skewY-angle);
 	-moz-transform:    skew(@skewX-angle, @skewY-angle);
 	-ms-transform:     skew(@skewX-angle, @skewY-angle);
@@ -182,7 +182,7 @@
 	transform:         skew(@skewX-angle, @skewY-angle);
 }
                                                       
-.skewX(@skewX-angle: 0){ 
+.t-skewX(@skewX-angle: 0){ 
 	-webkit-transform: skewX(@skewX-angle);
 	-moz-transform:    skewX(@skewX-angle);
 	-ms-transform:     skewX(@skewX-angle);
@@ -190,7 +190,7 @@
 	transform:         skewX(@skewX-angle);
 }
 
-.skewY(@skewY-angle: 0){ 
+.t-skewY(@skewY-angle: 0){ 
 	-webkit-transform: skewY(@skewY-angle);
 	-moz-transform:    skewY(@skewY-angle);
 	-ms-transform:     skewY(@skewY-angle);
@@ -199,7 +199,7 @@
 }
 
 
-.translate(@move-x:0, @move-y:0){ 
+.t-translate(@move-x:0, @move-y:0){ 
 	-webkit-transform: translate(@move-x,@move-y);
 	-moz-transform:    translate(@move-x,@move-y);
 	-ms-transform:     translate(@move-x,@move-y);
@@ -207,8 +207,31 @@
 	transform:         translate(@move-x,@move-y);
 }
 
+.t-translateX(@move-x:0){ 
+	-webkit-transform: translateX(@move-x);
+	-moz-transform:    translateX(@move-x);
+	-ms-transform:     translateX(@move-x);
+	-o-transform:      translateX(@move-x);
+	transform:         translateX(@move-x);
+}
 
-.transition(@property: all, @duration: .5s, @tfunction: ease, @delay: 0s){ 
+.t-translateY(@move-y:0){ 
+	-webkit-transform: translateY(@move-y);
+	-moz-transform:    translateY(@move-y);
+	-ms-transform:     translateY(@move-y);
+	-o-transform:      translateY(@move-y);
+	transform:         translateY(@move-y);
+}
+
+.t-translateZ(@move-z:0){ 
+	-webkit-transform: translateZ(@move-z);
+	-moz-transform:    translateZ(@move-z);
+	-ms-transform:     translateZ(@move-z);
+	-o-transform:      translateZ(@move-z);
+	transform:         translateZ(@move-z);
+}
+
+.transit(@property: all, @duration: .5s, @tfunction: ease, @delay: 0s){ 
 	-webkit-transition: @property @duration @tfunction @delay;
 	-moz-transition:    @property @duration @tfunction @delay;
 	-ms-transition:     @property @duration @tfunction @delay;

@@ -1,3 +1,5 @@
+# Deprecated in favor of autoprefixer usage
+
 **Test rgba background**, simple and useful mixin to check element's size, paddings and etc. By default it sets to 30% transparent red
 
 Inner variables and defaults: 
@@ -42,22 +44,22 @@ Example of usage:
 
 Inner variables and defaults: 
 ```css
-.opacity(@opacity: 0.5);
+.opac(@opacity: 0.5);
 ```
 Example of usage:
 ```css
-.opacity(0.8);
+.opac(0.8);
 ```
 ---
 **Box sizing**, border-box by default
 
 Inner variables and defaults: 
 ```css
-.box-sizing(@sizing: border-box);
+.sizing(@sizing: border-box);
 ```
 Example of usage:
 ```css
-.box-sizing(border-box);
+.sizing(border-box);
 ```
 ---
 **Size of element**, 0 by default
@@ -75,11 +77,11 @@ Example of usage:
 
 Inner variables and defaults: 
 ```css
-.user-select(@argument: none);
+.u-select(@argument: none);
 ```
 Example of usage:
 ```css
-.user-select(text);
+.u-select(text);
 ```
 ---
 **This mixin sets `background-size: cover`**
@@ -120,7 +122,7 @@ Inner variables and defaults:
 
 or
 
-.border-radius(@top-left: 5px, @top-right: 5px, @bottom-right: 5px, @bottom-left: 5px);
+.b-radius(@top-left: 5px, @top-right: 5px, @bottom-right: 5px, @bottom-left: 5px);
 ```
 Example of usage:
 ```css
@@ -137,55 +139,55 @@ By default it's `background: linear-gradient(top, #fff, #000)` with start color 
 
 Inner variables and defaults: 
 ```css
-.linear-gradient(@angle-position: top, @start-color: #fff, @stop-color: #000, @fallback-color: @start-color);
+.l-gradient(@angle-position: top, @start-color: #fff, @stop-color: #000, @fallback-color: @start-color);
 ```
 Example of usage:
 ```css
-.linear-gradient(170deg, #ffa500, #d20909, #ffa500);
+.l-gradient(170deg, #ffa500, #d20909, #ffa500);
 ```
 ---
 **Set `box-shadow`**. Arguments: horizontal offset, vertical offset, blur radius, spread, color.
 
 Inner variables and defaults: 
 ```css
-.box-shadow(@hoff: 1px, @voff: 1px, @blur: 2px, @spread: 0, @color: #000);
+.shadow(@hoff: 1px, @voff: 1px, @blur: 2px, @spread: 0, @color: #000);
 ```
 Example of usage:
 ```css
-.box-shadow(-6px, 4px, 8px, -3px, rgba(0, 0, 0, 0.5));
+.shadow(-6px, 4px, 8px, -3px, rgba(0, 0, 0, 0.5));
 ```
 ---
 **Set `box-shadow: inset`**. Arguments: horizontal offset, vertical offset, blur radius, spread, color.
 
 Inner variables and defaults: 
 ```css
-.inset-box-shadow(@hoff: 1px, @voff: 1px, @blur: 2px, @spread: 0, @color: #000);
+.inset-shadow(@hoff: 1px, @voff: 1px, @blur: 2px, @spread: 0, @color: #000);
 ```
 Example of usage: 
 ```css
-.inset-box-shadow(-3px, 3px, 6px, 0, rgba(0, 0, 0, 0.5));
+.inset-shadow(-3px, 3px, 6px, 0, rgba(0, 0, 0, 0.5));
 ```
 ---
 **Animation mixin**. There are a bunch of arguments: animation-name, animation-duration, animation-tfunction, animation-delay, animation-iteration, animation-direction, animation-play-state.
 
 Inner variables and defaults: 
 ```css
-.animation(@animation-name:first, @animation-duration:1s, @animation-tfunction:linear, @animation-delay:0s, @animation-iteration:infinite, @animation-direction:normal, @animation-play-state:running)
+.animate(@animation-name:first, @animation-duration:1s, @animation-tfunction:linear, @animation-delay:0s, @animation-iteration:infinite, @animation-direction:normal, @animation-play-state:running)
 ```
 Example of usage: 
 ```css
-.animation(some-name,2s,linear,0s,1); //Here we just use 4 first args and last 2 are defaults
+.animate(some-name,2s,linear,0s,1); //Here we just use 4 first args and last 2 are defaults
 ```
 ---
 **Multiple transform**. Feel free to use any valid arguments, it useful for combinations
 
 Inner variables and defaults: 
 ```css
-.transform(...);
+.transf(...);
 ```
 Example of usage: 
 ```css
-.transform(rotate(360deg) scale(1.5));
+.transf(rotate(360deg) scale(1.5));
 ```
 ---
 **Transform origin mixin**. Allows you to change the point of origin of a transform.
@@ -204,99 +206,99 @@ More detailed transformation mixins:
 
 Inner variables and defaults: 
 ```css
-    .rotate(@rotate-angle: 0deg);
+    .t-rotate(@rotate-angle: 0deg);
 ```
 Example of usage:
 ```css
-    .rotate(45deg);
+    .t-rotate(45deg);
 ```
 ---
 **This mixin proportionally scale element**. `transform: scale` By default it sets to 1
 
 Inner variables and defaults: 
 ```css
-    .scale(@scale: 1);
+    .t-scale(@scale: 1);
 ```
 Example of usage: 
 ```css
-    .scale(1.3);
+    .t-scale(1.3);
 ```
 ---
 **Scale element by X and Y**. `transform: scale` with two arguments. Similar to previous. By default it sets to 1
 
 Inner variables and defaults: 
 ```css
-        .scaleXY(@scaleX: 1, @scaleY: 1);
+        .t-scaleXY(@scaleX: 1, @scaleY: 1);
 ```
 Example of usage:
 ```css
-    	.scaleXY(1.4, 2);
+    	.t-scaleXY(1.4, 2);
 ```
 ---
 **Scale element by X `transform: scalex`**. By default it sets to 1
 
 Inner variables and defaults: 
 ```css
-		.scaleX(@scaleX: 1);
+		.t-scaleX(@scaleX: 1);
 ```
 Example of usage:
 ```css
-		.scaleX(0.5);
+		.t-scaleX(0.5);
 ```
 ---
 **Scale element by Y `transform: scaley`**. By default it sets to 1
 
 Inner variables and defaults: 
 ```css
-		.scaleY(@scaleY: 1);
+		.t-scaleY(@scaleY: 1);
 ```
 Example of usage:
 ```css
-		.scaleY(2.5);
+		.t-scaleY(2.5);
 ```
 ---
 **This mixin allows you to skew an element on the x and y axis**, By default it sets to 0
 
 Inner variables and defaults: 
 ```css
-	.skew(@skewx-angle: 0, @skewy-angle: 0);     
+	.t-skew(@skewx-angle: 0, @skewy-angle: 0);     
 ```
 Example of usage:
 ```css
-	.skew(0deg, -25deg);     
+	.t-skew(0deg, -25deg);     
 ```
 ---
 **Skew element on the x axis**.
 
 Inner variables and defaults: 
 ```css   
-		.skewX(@skewX-angle: 0);
+		.t-skewX(@skewX-angle: 0);
 ```
 Example of usage:
 ```css   
-		.skewX(30deg);
+		.t-skewX(30deg);
 ```
 ---
 **Skew element on the y axis**.
 
 Inner variables and defaults: 
 ```css
-		.skewY(@skewY-angle: 0);
+		.t-skewY(@skewY-angle: 0);
 ```
 Example of usage: 
 ```css
-		.skewY(-45deg);
+		.t-skewY(-45deg);
 ```
 ---
 **This mixin moves or relocates an element on the x and y axis** using `transform: translate`
 
 Inner variables and defaults: 
 ```css
-	.translate(@move-x:0, @move-y:0);
+	.t-translate(@move-x:0, @move-y:0);
 ```
 Example of usage:
 ```css
-	.translate(-40px, 100px);
+	.t-translate(-40px, 100px);
 ```
 ---
 **Allows elements to change values over a specified duration**. 
@@ -305,11 +307,11 @@ Default options: all properties, 0.5s uration, ease time function and no delay
 
 Inner variables and defaults: 
 ```css
-.transition(@property: all, @duration: .5s, @tfunction: ease, @delay: 0s);
+.transit(@property: all, @duration: .5s, @tfunction: ease, @delay: 0s);
 ```
 Example of usage:
 ```css
-.transition(all, 0.5s, ease-in, 0);
+.transit(all, 0.5s, ease-in, 0);
 ```
 ---
 **Column count mixin**. 

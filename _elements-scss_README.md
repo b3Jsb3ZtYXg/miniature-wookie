@@ -1,3 +1,5 @@
+# Deprecated in favor of autoprefixer usage
+
 **Test rgba background**, simple and useful mixin like in dev tools tools to see element's size, paddings and etc. By default it sets to 30% transparent red
 
 Inner variables and defaults: 
@@ -53,22 +55,22 @@ Example of usage:
 
 Inner variables and defaults: 
 ```css
-@mixin opacity($opacity: 0.5);
+@mixin opac($opacity: 0.5);
 ```
 Example of usage:
 ```css
-@include opacity(0.8);
+@include opac(0.8);
 ```
 ---
 **Box sizing**, border-box by default
 
 Inner variables and defaults: 
 ```css
-@mixin box-sizing($sizing: border-box);
+@mixin sizing($sizing: border-box);
 ```
 Example of usage:
 ```css
-@include box-sizing(border-box);
+@include sizing(border-box);
 ```
 
 ---
@@ -87,11 +89,11 @@ Example of usage:
 
 Inner variables and defaults: 
 ```css
-@mixin user-select($argument: none);
+@mixin u-select($argument: none);
 ```
 Example of usage:
 ```css
-@include user-select(text);
+@include u-select(text);
 ```
 ---
 **This mixin sets `background-size: cover`**
@@ -135,7 +137,7 @@ Inner variables and defaults:
 
 or
 
-@mixin border-radius($top-left: 5px, $top-right: 5px, $bottom-right: 5px, $bottom-left: 5px);
+@mixin b-radius($top-left: 5px, $top-right: 5px, $bottom-right: 5px, $bottom-left: 5px);
 ```
 Example of usage:
 ```css
@@ -143,7 +145,7 @@ Example of usage:
 
 or
 
-@include border-radius(7px, 10px, 15px, 20px);
+@include b-radius(7px, 10px, 15px, 20px);
 ```
 ---
 **Linear gradient as background**, first argument is angle or position, second - start color, then stop color. At last - fallback color.
@@ -152,11 +154,11 @@ By default it's `background: linear-gradient(top, #fff, #000)` with start color 
 
 Inner variables and defaults: 
 ```css
-@mixin linear-gradient($angle-position: top, $start-color: #fff, $stop-color: #000, $fallback-color: $start-color);
+@mixin l-gradient($angle-position: top, $start-color: #fff, $stop-color: #000, $fallback-color: $start-color);
 ```
 Example of usage:
 ```css
-@include linear-gradient(170deg, #ffa500, #d20909, #ffa500);
+@include l-gradient(170deg, #ffa500, #d20909, #ffa500);
 ```
 ---
 **Stripped gradient as background** This mixin was created by css-tricks.com with some fixes from Paul d'Aoust. First argument is variable that contain color list, second - direction, then fallback color.
@@ -175,33 +177,33 @@ $colors: #fa9300, #66c9ee, #c9c9c9, #82b964;
 
 Inner variables and defaults: 
 ```css
-@mixin box-shadow($hoff: 1px, $voff: 1px, $blur: 2px, $spread: 0, $color: #000);
+@mixin hadow($hoff: 1px, $voff: 1px, $blur: 2px, $spread: 0, $color: #000);
 ```
 Example of usage:
 ```css
-@include box-shadow(-6px, 4px, 8px, -3px, rgba(0, 0, 0, 0.5));
+@include shadow(-6px, 4px, 8px, -3px, rgba(0, 0, 0, 0.5));
 ```
 ---
 **Set `box-shadow: inset`**. Arguments: horizontal offset, vertical offset, blur radius, spread, color.
 
 Inner variables and defaults: 
 ```css
-@mixin inset-box-shadow($hoff: 1px, $voff: 1px, $blur: 2px, $spread: 0, $color: #000);
+@mixin inset-shadow($hoff: 1px, $voff: 1px, $blur: 2px, $spread: 0, $color: #000);
 ```
 Example of usage: 
 ```css
-@include inset-box-shadow(-3px, 3px, 6px, 0, rgba(0, 0, 0, 0.5));
+@include inset-shadow(-3px, 3px, 6px, 0, rgba(0, 0, 0, 0.5));
 ```
 ---
 **Multiple `box-shadow`**. Arguments: horizontal offset, vertical offset, blur radius, spread, color for each shadow
 
 Inner variables and defaults: 
 ```css
-@mixin multiple-box-shadow($shadow...);
+@mixin multiple-shadow($shadow...);
 ```
 Example of usage: 
 ```css
-@include multiple-box-shadow(inset  0  3px 3px -2px #555, 
+@include multiple-shadow(inset  0  3px 3px -2px #555, 
                              inset  0 -3px 3px -2px #555);
 ```
 ---
@@ -220,11 +222,11 @@ Example of usage:
 
 Inner variables and defaults: 
 ```css
-@mixin transform($arguments...);
+@mixin transf($arguments...);
 ```
 Example of usage: 
 ```css
-@include transform(rotate(360deg) scale(1.5));
+@include transf(rotate(360deg) scale(1.5));
 ```
 ---
 **Transform origin mixin**. Allows you to change the point of origin of a transform.
@@ -243,99 +245,99 @@ More detailed transformation mixins:
 
 Inner variables and defaults: 
 ```css
-@mixin rotate($rotate-angle: 0);
+@mixin t-rotate($rotate-angle: 0);
 ```
 Example of usage:
 ```css
-@include rotate(45deg);
+@include t-rotate(45deg);
 ```
 ---
 **This mixin proportionally scale element**. `transform: scale` By default it sets to 1
 
 Inner variables and defaults: 
 ```css
-@mixin scale($scale: 1);
+@mixin t-scale($scale: 1);
 ```
 Example of usage: 
 ```css
-@include scale(1.3);
+@include t-scale(1.3);
 ```
 ---
 **Scale element by X and Y**. `transform: scale` with two arguments. Similar to previous. By default it sets to 1
 
 Inner variables and defaults: 
 ```css
-@mixin scaleXY($scaleX: 1, $scaleY: 1);
+@mixin t-scaleXY($scaleX: 1, $scaleY: 1);
 ```
 Example of usage:
 ```css
-@include scaleXY(1.4, 2);
+@include t-scaleXY(1.4, 2);
 ```
 ---
 **Scale element by X `transform: scalex`**. By default it sets to 1
 
 Inner variables and defaults: 
 ```css
-@mixin scaleX($scaleX: 1);
+@mixin t-scaleX($scaleX: 1);
 ```
 Example of usage:
 ```css
-@include scaleX(0.5);
+@include t-scaleX(0.5);
 ```
 ---
 **Scale element by Y `transform: scaley`**. By default it sets to 1
 
 Inner variables and defaults: 
 ```css
-@mixin scaleY($scaleY: 1);
+@mixin t-scaleY($scaleY: 1);
 ```
 Example of usage:
 ```css
-@include scaleY(2.5);
+@include t-scaleY(2.5);
 ```
 ---
 **This mixin allows you to skew an element on the x and y axis**
 
 Inner variables and defaults: 
 ```css
-@mixin skew($skewx-angle: 0, $skewy-angle: 0);     
+@mixin t-skew($skewx-angle: 0, $skewy-angle: 0);     
 ```
 Example of usage:
 ```css
-@include skew(0, -25deg);     
+@include t-skew(0, -25deg);     
 ```
 ---
 **Skew element on the x axis**.
 
 Inner variables and defaults: 
 ```css   
-@mixin .skewX($skewX-angle: 0);
+@mixin t-skewX($skewX-angle: 0);
 ```
 Example of usage:
 ```css   
-@include skewX(30deg);
+@include t-skewX(30deg);
 ```
 ---
 **Skew element on the y axis**.
 
 Inner variables and defaults: 
 ```css
-@mixin skewY($skewY-angle: 0);
+@mixin t-skewY($skewY-angle: 0);
 ```
 Example of usage: 
 ```css
-@include skewY(-45deg);
+@include t-skewY(-45deg);
 ```
 ---
 **This mixin moves or relocates an element on the x and y axis** using `transform: translate`
 
 Inner variables and defaults: 
 ```css
-@mixin translate($move-x:0, $move-y:0);
+@mixin t-translate($move-x:0, $move-y:0);
 ```
 Example of usage:
 ```css
-@include translate(-40px, 100px);
+@include t-translate(-40px, 100px);
 ```
 ---
 **Allows elements to change values over a specified duration**. 
@@ -344,11 +346,11 @@ Default options: all properties, 0.5s uration, ease time function and no delay
 
 Inner variables and defaults: 
 ```css
-@mixin transition($property: all, $duration: .5s, $tfunction: ease, $delay: 0s);
+@mixin transit($property: all, $duration: .5s, $tfunction: ease, $delay: 0s);
 ```
 Example of usage:
 ```css
-@include transition(all, 0.5s, ease-in, 0s);
+@include transit(all, 0.5s, ease-in, 0s);
 ```
 ---
 **Column count mixin**. 

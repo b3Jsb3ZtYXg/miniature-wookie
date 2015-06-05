@@ -20,7 +20,7 @@ Why "miniature-wookie"? - I don't know, it's just github repo naming advice ;)
 Ok, for now there are three mixin libs like common elements, grid and weird mixn for pixel perfect dev. Just include it to your stylesheet and apply desirable mixin. Each lib have their own readme with detailed explanations.
 You can visit project [home page](http://orlovmax.com/lab/tools/miniature-wookie) for some details, demos and tutorials.
 
-### Elements lib
+### Elements lib - Deprecated in favor of autoprefixer usage
 Lightweight library with useful mixns, it allows to forget for vendor prefixes and write yur code faster: just include mixin with desirable options. Also it contains some special mixins like strip gradient or multiple shadow. 
 See shortcodes for less elements [here](https://github.com/orlovmax/lab/blob/master/miniature-wookie/_elements-less_README.md) and for scss elements [here](https://github.com/orlovmax/lab/blob/master/miniature-wookie/_elements-scss_README.md).
 Also you can visit project [home page](http://orlovmax.com/lab/tools/miniature-wookie_mixin-lib) for some details, demos and tutorials.
