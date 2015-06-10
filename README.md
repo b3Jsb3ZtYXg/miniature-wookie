@@ -6,7 +6,8 @@
     - [Elements lib](#elements-lib)
     - [Grid system](#grid-system)
     - [Layout tools](#layout-tools)
-* [Conclusion](#conclusion)
+    - [Mixins lib](#mixins-lib)
+    - [Igniting tools](#igniting-tools)
 * [TODO](#todo)
 * [Changelog](#changelog)
 * [License](#license)
@@ -34,18 +35,24 @@ It's nice set with two mixins, that allows to develop on the principle of pixel-
 Usage is very simple: first you need to import the library and apply mixin to <body> tag, with desired options. This will result in the imposition of `layout.jpg` over web page. Image width will be equal to 100% and opacity - 50%. Optionally available "graph paper" default grid is not shown because its opacity is equal to zero. See more at [_layout-tools_README](https://github.com/orlovmax/lab/blob/master/miniature-wookie/layout-tools_README.md).
 Also you can visit project [home page](http://orlovmax.com/lab/tools/pixel-perfect-dev) for some details, demos and tutorials.
 
-## Conclusion
-As you can see elements library was based on the similar or same properties as original css, but makes code more "dry" and clean .You should use autoprefixer instead of most mixins in this lib. But for dev - it's ok.
+### Mixins lib
+Lightweight library with useful mixns. Includes some mixins from outdated elements library.
 
-Grid system mixin lib was created for one of my bicycles - Inclusion framework. I like it because as it based on calc() css3 property, it allows me to create fluid nested grid with fixed gutters and make some fallback for non-feature-rich browsers.
-
-Layout tools - just quick-created mixin for pixel perfect dev. Put layout image as semi-transparent background to the body tag. That's easy and useful.
+### Igniting tools
+A logical extension of two very useful mixins for debugging - `testbg()` and `testout()` - add semi-transparent background and outline to elements.
+This tool is mixin, that applies to the root tag or global scope and can highlight specific or all elements and add to them colored outline. 
 
 ## TODO
 * Less grid system
 * Extends and generated classes for grid system
 
 ## Changelog
+* (June 10, 2015)
+    - Igniting tools init
+* (June 07, 2015)
+    - _mixins libs added for sass, scss, stylus, less
+* (June 05, 2015)
+    - Elements lib development deprecated in favor of autoprefixer
 * (May 09, 2015)
     - Stylus version added
 * (January 11, 2015)
