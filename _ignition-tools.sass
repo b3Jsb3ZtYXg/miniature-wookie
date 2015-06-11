@@ -1,0 +1,24 @@
+// Draft version of ignition mixin for highlighting specific elements
+// TODO
+//  - define depth of highlighting
+//  - create dynamic color map for different elements
+//  - modify all selector
+//  - README
+
+
+=ignition($target: none, $bg-color: 'rgba(255,0,0,.5)', $out-color: 'none')
+	@if $target != 'none'
+		@if $target == 'all'
+			*
+				background: #{$bg-color} !important
+				@if $out-color != 'none'
+					outline: 1px solid #{$out-color} !important
+		@else if $target == 'this'
+			background: #{$bg-color} !important
+			@if $out-color != 'none'
+				outline: 1px solid #{$out-color} !important
+		@else
+			#{$target}
+				background-color: #{$bg-color} !important
+				@if $out-color != 'none'
+					outline: 1px solid #{$out-color} !important
