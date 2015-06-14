@@ -39,7 +39,7 @@ Also you can visit project [home page](http://orlovmax.com/lab/tools/pixel-perfe
 Lightweight library with useful mixns. Includes some mixins from outdated elements library.
 
 ### Igniting tools
-A logical extension of two very useful mixins for debugging - `testbg()` and `testout()` - add semi-transparent background and outline to elements.
+This is the logical extension of two very useful mixins for debugging - `testbg()` and `testout()` - add semi-transparent background and outline to elements.
 This tool is mixin, that applies to the root tag or global scope and can highlight specific or all elements and add to them colored outline. 
 Shortcodes for these mixins you can find [here](https://github.com/orlovmax/lab/blob/master/miniature-wookie/_mixins-lib)
 
