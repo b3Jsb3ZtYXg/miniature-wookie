@@ -1,22 +1,22 @@
 **Test rgba background**, simple and useful mixin like in dev tools tools to see element's size, paddings and etc. By default it sets to 30% transparent red
 
 Inner variables and defaults:
-```css
+```stylus
 testbg($red: 255, $green: 0, $blue: 0, $alpha: .3);
 ```
 Example of usage: 
-```css
+```stylus
 testbg(0,0,0,.5);
 ```
 ---
 **Test outline**, this mixin apply 1px solid red outline to the element.
 
 Inner variables and defaults: 
-```css
+```stylus
 testout($width: 1px, $line-type: solid, $color: red);
 ```
 Example of usage: 
-```css
+```stylus
 testout(1px,dashed,#000);
 ```
 ---
@@ -25,7 +25,7 @@ testout(1px,dashed,#000);
 No inner variables
 
 Example of usage: 
-```css
+```stylus
 hidentext();
 ```
 ---
@@ -34,6 +34,6 @@ hidentext();
 No inner variables
 
 Example of usage: 
-```css
+```stylus
 clearfix();
 ```

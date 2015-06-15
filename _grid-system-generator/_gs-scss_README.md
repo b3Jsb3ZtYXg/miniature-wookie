@@ -22,11 +22,11 @@ $column_height: auto;
 **Grid ontainer mixin**
 
 Inner variables and defaults: 
-```css
+```scss
 @mixin gs($gs_width, $gs_gutter-width, $gs_gutter-height, $gs_gutter-width-fallback)
 ```
 Example of usage: 
-```css
+```scss
 @include gs();
 ```
 ---
@@ -34,12 +34,12 @@ Example of usage:
 **Column mixin**
 
 Inner variables and defaults: 
-```css
+```scss
 @mixin gs-column($column_count, $column_total-count, $column_gutter-width, 
             $column_gutter-height, $column-height, $column_gutter-width-fallback, $column_gutter-height-fallback, $gs-width)
 ```
 Example of usage: 
-```css
+```scss
 @include gs-column(1,12,1%,10px,80px,2%, 10px);
 ```
 ---
@@ -47,11 +47,11 @@ Example of usage:
 **Push**
 
 Inner variables and defaults: 
-```css
+```scss
 @mixin gs-push( $column_count, $column_total-count, $column_gutter-width, $column_gutter-width-fallback, $gs_width)
 ```
 Example of usage: 
-```css
+```scss
 @include gs-push(1,12,1%);
 ```
 ---
@@ -59,11 +59,11 @@ Example of usage:
 **Pull**
 
 Inner variables and defaults: 
-```css
+```scss
 @mixin gs-pull( $column_count, $column_total-count, $column_gutter-width, $column_gutter-width-fallback, $gs_width)
 ```
 Example of usage: 
-```css
+```scss
 @include gs-pull(4,12,1%);
 ```
 ---
