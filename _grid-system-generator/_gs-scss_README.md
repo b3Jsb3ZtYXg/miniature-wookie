@@ -6,6 +6,7 @@ There are four mixins: grid container, grid column, grid row, push and pull. Gri
 * Offset mixin allows to push column left or pull it right on some distance. Expected settings: distance-column count to move on, total column count in row, horizontal gutter like in other columns. By default it sets to 1 column of 12 total columns with 2% gutters.
 
 ## Predefined settings
+$position-method: "float";
 $gs_width: 100%;
 $gs_gutter-width: 0; 
 $gs_gutter-height: 0;
@@ -36,7 +37,7 @@ Example of usage:
 Inner variables and defaults: 
 ```scss
 @mixin gs-column($column_count, $column_total-count, $column_gutter-width, 
-            $column_gutter-height, $column-height, $column_gutter-width-fallback, $column_gutter-height-fallback, $gs-width)
+            $column_gutter-height, $column-height, $column_gutter-width-fallback, $column_gutter-height-fallback, $gs-width, $position-method)
 ```
 Example of usage: 
 ```scss

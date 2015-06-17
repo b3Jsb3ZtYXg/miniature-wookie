@@ -5,6 +5,11 @@
 
 //////////////////////////////////////// GRID VARIABLES
 
+// Define how generated grid elements should be positioned
+// Might be 'float' or 'none' By default it's 'float'
+// Use none if you want to use same grid mixins with float and inline props for different page elements
+$position-method: 'float'
+
 $gs_width: 100%
 $gs_gutter-width: 0
 $gs_gutter-height: 0
@@ -94,8 +99,7 @@ $column_height: auto
 // Column mixin has next variables: column count for current element, total column count in row, horizontal gutter and vertical gutter and their fallbacks.
 // By default it sets to 1 column of 12 total columns wit 2% gutters.
 
-=gs-column($column_count: $column_count, $column_total-count: $column_total-count, $column_gutter-width: $column_gutter-width, $column_gutter-height: $column_gutter-height, $column_height: $column_height, $column_gutter-width-fallback: $column_gutter-width-fallback, $column_gutter-height-fallback: $column_gutter-height-fallback, $gs_width: $gs_width)
-	float: left
+=gs-column($column_count: $column_count, $column_total-count: $column_total-count, $column_gutter-width: $column_gutter-width, $column_gutter-height: $column_gutter-height, $column_height: $column_height, $column_gutter-width-fallback: $column_gutter-width-fallback, $column_gutter-height-fallback: $column_gutter-height-fallback, $gs_width: $gs_width, $position-method: $position-method)
 
 	// Grid gutter width and margin math for calc() and fallback
 	$half-gutter-width: $column_gutter-width / 2
@@ -105,6 +109,10 @@ $column_height: auto
 
 	// Column width math
 	$column_width: $gs_width / $column_total-count * $column_count
+
+	// Column positioning method
+	@if $position-method != 'none' and $position-method == 'float'
+		float: left
 
 	// Check gutter width and it fallback for `auto` values, if false - return no math variant
 	@if $column_gutter-width != auto and $column_gutter-width-fallback != auto
