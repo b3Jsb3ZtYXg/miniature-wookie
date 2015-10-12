@@ -8,6 +8,7 @@
     - [Layout tools](#layout-tools)
     - [Mixins lib](#mixins-lib)
     - [Igniting tools](#igniting-tools)
+    - [Typographic rhythm](#typographic-rhythm)
 * [TODO](#todo)
 * [Changelog](#changelog)
 * [License](#license)
@@ -23,7 +24,7 @@ You can visit project [home page](http://orlovmax.com/lab/tools/miniature-wookie
 
 ### Elements lib - Deprecated in favor of autoprefixer usage
 Lightweight library with useful mixns, it allows to forget for vendor prefixes and write yur code faster: just include mixin with desirable options. Also it contains some special mixins like strip gradient or multiple shadow. 
-See shortcodes for less elements [here](https://github.com/orlovmax/lab/blob/master/miniature-wookie/_elements-lib/_elements-less_README.md) and for scss elements [here](https://github.com/orlovmax/lab/blob/master/miniature-wookie/_elements-lib/_elements-scss_README.md).
+See shortcodes for less elements [here](https://github.com/orlovmax/lab/blob/master/miniature-wookie/elements-lib/elements-less_README.md) and for scss elements [here](https://github.com/orlovmax/lab/blob/master/miniature-wookie/elements-lib/elements-scss_README.md).
 Also you can visit project [home page](http://orlovmax.com/lab/tools/miniature-wookie_mixin-lib) for some details, demos and tutorials.
 
 ### Grid system
@@ -32,7 +33,7 @@ Also you can visit project [home page](http://orlovmax.com/lab/tools/miniature-w
 
 ### Layout tools
 It's nice set with two mixins, that allows to develop on the principle of pixel-perfect. It contains two separate mixins: first - layout mixin, the second - graph paper that positioned over the page.
-Usage is very simple: first you need to import the library and apply mixin to <body> tag, with desired options. This will result in the imposition of `layout.jpg` over web page. Image width will be equal to 100% and opacity - 50%. Optionally available "graph paper" default grid is not shown because its opacity is equal to zero. See more at [_layout-tools_README](https://github.com/orlovmax/lab/blob/master/miniature-wookie/_layout-tools/_layout-tools_README.md).
+Usage is very simple: first you need to import the library and apply mixin to <body> tag, with desired options. This will result in the imposition of `layout.jpg` over web page. Image width will be equal to 100% and opacity - 50%. Optionally available "graph paper" default grid is not shown because its opacity is equal to zero. See more at [_layout-tools_README](https://github.com/orlovmax/lab/blob/master/miniature-wookie/layout-tools/layout-tools_README.md).
 Also you can visit project [home page](http://orlovmax.com/lab/tools/pixel-perfect-dev) for some details, demos and tutorials.
 
 ### Mixins lib
@@ -41,13 +42,20 @@ Lightweight library with useful mixns. Includes some mixins from outdated elemen
 ### Igniting tools
 This is the logical extension of two very useful mixins for debugging - `testbg()` and `testout()` - add semi-transparent background and outline to elements.
 This tool is mixin, that applies to the root tag or global scope and can highlight specific or all elements and add to them colored outline. 
-Shortcodes for these mixins you can find [here](https://github.com/orlovmax/lab/blob/master/miniature-wookie/_mixins-lib)
+Shortcodes for these mixins you can find [here](https://github.com/orlovmax/lab/blob/master/miniature-wookie/mixins-lib)
+
+### Typographic rhythm
+Mixin library to create a typographic system using scale and vertical rhythm.
+In general this tool was inspired by Gridlover, ModularScale and Compass vertical rhythm tool.
+Shortcodes for these mixins you can find [here](https://github.com/orlovmax/lab/blob/master/miniature-wookie/typographic-rhythm)
 
 ## TODO
 * Less grid system
 * Extends and generated classes for grid system
 
 ## Changelog
+* (October 12, 2015)
+    - Typography rhythm init, file naming changed
 * (June 12, 2015)
     - Igniting tools release
 * (June 10, 2015)
