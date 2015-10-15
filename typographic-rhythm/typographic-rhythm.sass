@@ -4,14 +4,14 @@
 
 //////////////////////////////////////// VARIABLES
 
-// $level-factor - means exponent number of repeated multiplication of the scale factor (number >= 0 or "auto")
+// $level-factor - means exponent number of repeated multiplication of the scale factor (number >= 0 or 'auto')
 // It relates with scale of different text elements and defines how should one element should be bigger than common text
 // $base-font-size - in general this is the font size of common text in paragraph (in px)
 // $base-line-height - line height of common text in paragraph (number >= 1)
 // $scale-factor - defines scaling proportion of elements (number > 1)
 
 // Default settings
-$level-factor: "auto"
+$level-factor: 'auto'
 $base-font-size: 20px
 $base-line-height: 1.4
 $scale-factor: 1.5
@@ -23,16 +23,16 @@ $scale-factor: 1.5
   
   // Validate settings
   @if $lh < 1
-    @error "Base line height needs to be greater than 1"
+    @error 'Base line height needs to be greater than 1'
      
   @if $scale <= 1
-    @error "Scale factor needs to be greater than 1"
+    @error 'Scale factor needs to be greater than 1'
      
   // Init version works only with pixels as basic units and unitless line-height
-  @if unit($base-fz) != "px"
-    @error "Base font size units should be specified in px instead of current '#{unit($base-fz)}"
-  @if unit($lh) != ""
-    @error "Base line-height should be specified as a number without units instead of current '#{unit($base-lh)}"
+  @if unit($base-fz) != 'px'
+    @error 'Base font size units should be specified in px instead of current `#{unit($base-fz)}`'
+  @if unit($lh) != ''
+    @error 'Base line-height should be specified as a number without units instead of current `#{unit($base-lh)}`'
   
   
   // Define some variables and do common math
@@ -42,27 +42,27 @@ $scale-factor: 1.5
   $base-lh: round($base-fz * ($lh))
   
   // Magick starts here! Auto levels feature - completely pre-defined settings that depend on the element to which mixin was applied
-  @if $level == "auto"
-    // Kind of trick to get get name of the parent element
+  @if $level == 'auto'
+    // Kind of trick to get parent's element name
     $parent: inspect(#{&})
     
     // Compute some vaiables for different elements
-    @if $parent == "h1"
+    @if $parent == 'h1'
       $font-size: round($base-fz * pow($scale, 3))
       $margin-top: $base-lh * 2
-    @else if $parent == "h2"
+    @else if $parent == 'h2'
       $font-size: round($base-fz * pow($scale, 2))
       $margin-top: $base-lh * 2
-    @else if $parent == "h3"
+    @else if $parent == 'h3'
       $font-size: round($base-fz * pow($scale, 1))
       $margin-top: $base-lh
-    @else if $parent == "h4"
+    @else if $parent == 'h4'
       $font-size: round($base-fz * sqrt($scale))
       $margin-top: $base-lh
-    @else if $parent == "h5"
+    @else if $parent == 'h5'
       $font-size: round($base-fz / sqrt($scale))
       $margin-top: $base-lh
-    @else if $parent == "h6"
+    @else if $parent == 'h6'
       $font-size: round($base-fz / pow($scale, 1))
       $margin-top: $base-lh
     @else
