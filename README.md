@@ -47,13 +47,15 @@ Shortcodes for these mixins you can find [here](https://github.com/orlovmax/lab/
 ### Typographic rhythm
 Mixin library to create a typographic system using scale and vertical rhythm.
 In general this tool was inspired by Gridlover, ModularScale and Compass vertical rhythm tool.
-Shortcodes for these mixins you can find [here](https://github.com/orlovmax/lab/blob/master/miniature-wookie/typographic-rhythm)
+See more at [_typographic_rhythm_README](https://github.com/orlovmax/lab/blob/master/miniature-wookie/typographic-rhythm)
 
 ## TODO
 * Less grid system
-* Extends and generated classes for grid system
+* Less typographic rhythm tool
 
 ## Changelog
+* (October 15, 2015)
+    - Typography rhythm sass, scss, stylus versions added
 * (October 12, 2015)
     - Typography rhythm init, file naming changed
 * (June 12, 2015)

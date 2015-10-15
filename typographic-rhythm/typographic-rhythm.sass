@@ -20,76 +20,103 @@ $scale-factor: 1.5
 //////////////////////////////////////// Typographic rhythm mixin
 
 @mixin typo-rhythm($level: $level-factor, $base-fz: $base-font-size, $lh: $base-line-height, $scale: $scale-factor)
-  
-  // Validate settings
-  @if $lh < 1
-    @error 'Base line height needs to be greater than 1'
-     
-  @if $scale <= 1
-    @error 'Scale factor needs to be greater than 1'
-     
-  // Init version works only with pixels as basic units and unitless line-height
-  @if unit($base-fz) != 'px'
-    @error 'Base font size units should be specified in px instead of current `#{unit($base-fz)}`'
-  @if unit($lh) != ''
-    @error 'Base line-height should be specified as a number without units instead of current `#{unit($base-lh)}`'
-  
-  
-  // Define some variables and do common math
-  $font-size: null 
-  $line-height: null
-  $margin-top: null
-  $base-lh: round($base-fz * ($lh))
-  
-  // Magick starts here! Auto levels feature - completely pre-defined settings that depend on the element to which mixin was applied
-  @if $level == 'auto'
-    // Kind of trick to get parent's element name
-    $parent: inspect(#{&})
-    
-    // Compute some vaiables for different elements
-    @if $parent == 'h1'
-      $font-size: round($base-fz * pow($scale, 3))
-      $margin-top: $base-lh * 2
-    @else if $parent == 'h2'
-      $font-size: round($base-fz * pow($scale, 2))
-      $margin-top: $base-lh * 2
-    @else if $parent == 'h3'
-      $font-size: round($base-fz * pow($scale, 1))
-      $margin-top: $base-lh
-    @else if $parent == 'h4'
-      $font-size: round($base-fz * sqrt($scale))
-      $margin-top: $base-lh
-    @else if $parent == 'h5'
-      $font-size: round($base-fz / sqrt($scale))
-      $margin-top: $base-lh
-    @else if $parent == 'h6'
-      $font-size: round($base-fz / pow($scale, 1))
-      $margin-top: $base-lh
-    @else
-      $font-size: $base-fz
-      $margin-top: $base-lh
-      
-    $line-height: $base-lh * ceil($font-size / $base-lh)
-    
-  @else if $level == 0
-    $font-size: $base-fz
-    $line-height: $base-lh
-    $margin-top: $base-lh
-    
-  @else if $level > 1
-    $font-size: round($base-fz * pow($scale, $level))
-    $line-height: $base-lh * ceil($font-size / $base-lh)
-    $margin-top: $base-lh * 2
-    
-  @else
-    $font-size: round($base-fz * pow($scale, $level))
-    $line-height: $base-lh * ceil($font-size / $base-lh)
-    $margin-top: $base-lh
-    
-    
-  // Apply computed variables to the element
-  font-size: $font-size
-  line-height: $line-height
-  margin-top: $margin-top
-  margin-bottom: $base-lh  
- 
+
+	// Validate settings
+	@if $lh < 1
+		@error 'Base line height needs to be greater than 1'
+
+	@if $scale <= 1
+		@error 'Scale factor needs to be greater than 1'
+
+	// Init version works only with pixels as basic units and unitless line-height
+	@if unit($base-fz) != 'px'
+		@error 'Base font size units should be specified in px instead of current `#{unit($base-fz)}`'
+	@if unit($lh) != ''
+		@error 'Base line-height should be specified as a number without units instead of current `#{unit($base-lh)}`'
+
+
+	// Define some variables and do common math
+	$font-size: null
+	$line-height: null
+	$margin-top: null
+	$base-lh: round($base-fz * ($lh))
+
+	// Magick starts here! Auto levels feature - completely pre-defined settings that depend on the element to which mixin was applied
+	@if $level == 'auto'
+		// Kind of trick to get parent's element name
+		$parent: inspect(#{&})
+
+		// Compute some vaiables for different elements
+		@if $parent == 'h1'
+			$font-size: round($base-fz * pow($scale, 3))
+			$margin-top: $base-lh * 2
+		@else if $parent == 'h2'
+			$font-size: round($base-fz * pow($scale, 2))
+			$margin-top: $base-lh * 2
+		@else if $parent == 'h3'
+			$font-size: round($base-fz * pow($scale, 1))
+			$margin-top: $base-lh
+		@else if $parent == 'h4'
+			$font-size: round($base-fz * sqrt($scale))
+			$margin-top: $base-lh
+		@else if $parent == 'h5'
+			$font-size: round($base-fz / sqrt($scale))
+			$margin-top: $base-lh
+		@else if $parent == 'h6'
+			$font-size: round($base-fz / pow($scale, 1))
+			$margin-top: $base-lh
+		@else
+			$font-size: $base-fz
+			$margin-top: $base-lh
+
+		$line-height: $base-lh * ceil($font-size / $base-lh)
+
+	@else if $level == 0
+		$font-size: $base-fz
+		$line-height: $base-lh
+		$margin-top: $base-lh
+
+	@else if $level > 1
+		$font-size: round($base-fz * pow($scale, $level))
+		$line-height: $base-lh * ceil($font-size / $base-lh)
+		$margin-top: $base-lh * 2
+
+	@else
+		$font-size: round($base-fz * pow($scale, $level))
+		$line-height: $base-lh * ceil($font-size / $base-lh)
+		$margin-top: $base-lh
+
+
+	// Apply computed variables to the element
+	font-size: $font-size
+	line-height: $line-height
+	margin-top: $margin-top
+	margin-bottom: $base-lh
+
+
+//////////////////////////////////////// GENERATED VERTICAL RHYTHM
+
+// h1
+// 	+typo-rhythm()
+
+// h2
+// 	+typo-rhythm()
+
+// h3
+// 	+typo-rhythm()
+
+// h4
+// 	+typo-rhythm()
+
+// h5
+// 	+typo-rhythm()
+
+// h6
+// 	+typo-rhythm()
+
+// p, ul, ol, table, blockquote, a
+// 	+typo-rhythm()
+
+// ul ul, ol ol, ul ol, ol ul
+// 	margin-top: 0
+// 	margin-bottom: 0
