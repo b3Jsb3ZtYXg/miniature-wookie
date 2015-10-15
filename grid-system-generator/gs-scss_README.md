@@ -1,4 +1,4 @@
-# Simple and flexible grid for SCSS 
+# Simple and flexible grid for SASS, SCSS and Stylus
 There are four mixins: grid container, grid column, grid row, push and pull. Grid container and grid row are the same mixin.
 
 * Grid system container mixin, should be used for grid container and rows.

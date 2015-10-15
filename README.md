@@ -33,7 +33,7 @@ Also you can visit project [home page](http://orlovmax.com/lab/tools/miniature-w
 
 ### Layout tools
 It's nice set with two mixins, that allows to develop on the principle of pixel-perfect. It contains two separate mixins: first - layout mixin, the second - graph paper that positioned over the page.
-Usage is very simple: first you need to import the library and apply mixin to <body> tag, with desired options. This will result in the imposition of `layout.jpg` over web page. Image width will be equal to 100% and opacity - 50%. Optionally available "graph paper" default grid is not shown because its opacity is equal to zero. See more at [_layout-tools_README](https://github.com/orlovmax/lab/blob/master/miniature-wookie/layout-tools/layout-tools_README.md).
+Usage is very simple: first you need to import the library and apply mixin to <body> tag, with desired options. This will result in the imposition of `layout.jpg` over web page. Image width will be equal to 100% and opacity - 50%. Optionally available "graph paper" default grid is not shown because its opacity is equal to zero. See more at [layout-tools_README](https://github.com/orlovmax/lab/blob/master/miniature-wookie/layout-tools/layout-tools_README.md).
 Also you can visit project [home page](http://orlovmax.com/lab/tools/pixel-perfect-dev) for some details, demos and tutorials.
 
 ### Mixins lib
@@ -47,7 +47,7 @@ Shortcodes for these mixins you can find [here](https://github.com/orlovmax/lab/
 ### Typographic rhythm
 Mixin library to create a typographic system using scale and vertical rhythm.
 In general this tool was inspired by Gridlover, ModularScale and Compass vertical rhythm tool.
-See more at [_typographic_rhythm_README](https://github.com/orlovmax/lab/blob/master/miniature-wookie/typographic-rhythm)
+See more at [typographic_rhythm_README](https://github.com/orlovmax/lab/blob/master/miniature-wookie/typographic-rhythm/typographic_rhythm_README.md)
 
 ## TODO
 * Less grid system
