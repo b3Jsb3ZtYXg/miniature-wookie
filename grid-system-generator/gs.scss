@@ -29,7 +29,7 @@ $column_height: auto;
 // $gs-push: 'gs-push'
 // $gs-pull: 'gs-pull'
 
-//////////////////////////////////////// INTERNAL mixins
+//////////////////////////////////////// INTERNAL MIXINS
 
 // Calc() mixin
 @mixin calc($property, $expression) {
@@ -50,7 +50,7 @@ $column_height: auto;
 	}
 }
 
-//////////////////////////////////////// GRID CONTAINER mixin
+//////////////////////////////////////// GRID CONTAINER MIXIN
 
 // GS Mixins
 // Grid system container mixin, should be used for grid container and rows.
@@ -90,7 +90,7 @@ $column_height: auto;
 	@include gs_clear;
 }
 
-//////////////////////////////////////// COLUMN mixin
+//////////////////////////////////////// COLUMN MIXIN
 
 // Column mixin has next variables: column count for current element, total column count in row, horizontal gutter and vertical gutter and their fallbacks.
 // By default it sets to 1 column of 12 total columns wit 2% gutters.
@@ -170,7 +170,7 @@ $column_height: auto;
 	}
 }
 
-//////////////////////////////////////// PUSH and PULL mixins
+//////////////////////////////////////// PUSH and PULL MIXINS
 
 // Offset mixin allows to push column left or right on some distance.
 // Expected settings: distance-column count to move on, total column count in row, horizontal gutter like in other columns.

@@ -11,15 +11,49 @@
 // $scale-factor - defines scaling proportion of elements (number > 1)
 
 // Default settings
-$level-factor: 'auto';
-$base-font-size: 20px;
-$base-line-height: 1.4;
-$scale-factor: 1.5;
+$typo-level-factor: 'auto';
+$typo-base-font-size: 20px;
+$typo-base-line-height: 1.4;
+$typo-scale-factor: 1.5;
+
+//////////////////////////////////////// INTERNAL FUNCTIONS
+
+// Exponent https://gist.github.com/scottkellum/1160816
+@function _exp($base, $exponent) {
+	$value: $base;
+
+	@if $exponent > 1 {
+		@for $i from 2 through $exponent {
+			$value: $value * $base;
+		}
+	}
+
+	@if $exponent < 1 {
+		@for $i from 0 through -$exponent {
+			$value: $value / $base;
+		}
+	}
+
+	@return $value;
+}
+
+// Square root http://www.antimath.info/css/sass-sqrt-function
+@function _sqrt($r) {
+	$x0: 1;
+	$x1: $x0;
+
+	@for $i from 1 through 10 {
+		$x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+		$x0: $x1;
+	}
+
+	@return $x1;
+}
 
 
 //////////////////////////////////////// TYPOGRAPHYC RHYTHM MIXIN
 
-@mixin typo-rhythm($level: $level-factor, $base-fz: $base-font-size, $lh: $base-line-height, $scale: $scale-factor){
+@mixin typo-rhythm($level: $typo-level-factor, $base-fz: $typo-base-font-size, $lh: $typo-base-line-height, $scale: $typo-scale-factor){
 
 	// Validate settings
 	@if $lh < 1{
@@ -49,22 +83,22 @@ $scale-factor: 1.5;
 
 		// Compute some vaiables for different elements
 		@if $parent == 'h1' {
-			$font-size: round($base-fz * pow($scale, 3));
+			$font-size: round($base-fz * _exp($scale, 3));
 			$margin-top: $base-lh * 2;
 		} @else if $parent == 'h2' {
-			$font-size: round($base-fz * pow($scale, 2));
+			$font-size: round($base-fz * _exp($scale, 2));
 			$margin-top: $base-lh * 2;
 		} @else if $parent == 'h3' {
-			$font-size: round($base-fz * pow($scale, 1));
+			$font-size: round($base-fz * _exp($scale, 1));
 			$margin-top: $base-lh;
 		} @else if $parent == 'h4' {
-			$font-size: round($base-fz * sqrt($scale));
+			$font-size: round($base-fz * _sqrt($scale));
 			$margin-top: $base-lh;
 		} @else if $parent == 'h5' {
-			$font-size: round($base-fz / sqrt($scale));
+			$font-size: round($base-fz / _sqrt($scale));
 			$margin-top: $base-lh;
 		} @else if $parent == 'h6' {
-			$font-size: round($base-fz / pow($scale, 1));
+			$font-size: round($base-fz / _exp($scale, 1));
 			$margin-top: $base-lh;
 		} @else {
 			$font-size: $base-fz;
@@ -78,12 +112,12 @@ $scale-factor: 1.5;
 		$margin-top: $base-lh;
 
 	} @else if $level > 1{
-		$font-size: round($base-fz * pow($scale, $level));
+		$font-size: round($base-fz * _exp($scale, $level));
 		$line-height: $base-lh * ceil($font-size / $base-lh);
 		$margin-top: $base-lh * 2;
 
 	} @else {
-		$font-size: round($base-fz * pow($scale, $level));
+		$font-size: round($base-fz * _exp($scale, $level));
 		$line-height: $base-lh * ceil($font-size / $base-lh);
 		$margin-top: $base-lh;
 
