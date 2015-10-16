@@ -4,17 +4,17 @@
 
 //////////////////////////////////////// VARIABLES
 
-// $level-factor - means exponent number of repeated multiplication of the scale factor (number >= 0 or 'auto')
+// $tr_level-factor - means exponent number of repeated multiplication of the scale factor (number >= 0 or 'auto')
 // It relates with scale of different text elements and defines how should one element should be bigger than common text
-// $base-font-size - in general this is the font size of common text in paragraph (in px)
-// $base-line-height - line height of common text in paragraph (number >= 1)
-// $scale-factor - defines scaling proportion of elements (number > 1)
+// $tr_base-font-size - in general this is the font size of common text in paragraph (in px)
+// $tr_base-line-height - line height of common text in paragraph (number >= 1)
+// $tr_scale-factor - defines scaling proportion of elements (number > 1)
 
 // Default settings
-$typo-level-factor: 'auto';
-$typo-base-font-size: 20px;
-$typo-base-line-height: 1.4;
-$typo-scale-factor: 1.5;
+$tr_level-factor: 'auto';
+$tr_base-font-size: 20px;
+$tr_base-line-height: 1.4;
+$tr_scale-factor: 1.5;
 
 //////////////////////////////////////// INTERNAL FUNCTIONS
 
@@ -53,7 +53,7 @@ $typo-scale-factor: 1.5;
 
 //////////////////////////////////////// TYPOGRAPHYC RHYTHM MIXIN
 
-@mixin typo-rhythm($level: $typo-level-factor, $base-fz: $typo-base-font-size, $lh: $typo-base-line-height, $scale: $typo-scale-factor){
+@mixin typographic-rhythm($level: $tr_level-factor, $base-fz: $tr_base-font-size, $lh: $tr_base-line-height, $scale: $tr_scale-factor){
 
 	// Validate settings
 	@if $lh < 1{
@@ -134,25 +134,25 @@ $typo-scale-factor: 1.5;
 //////////////////////////////////////// GENERATED VERTICAL RHYTHM
 
 // h1{
-// 	@include typo-rhythm();
+// 	@include typographic-rhythm();
 // }
 // h2{
-// 	@include typo-rhythm();
+// 	@include typographic-rhythm();
 // }
 // h3{
-// 	@include typo-rhythm();
+// 	@include typographic-rhythm();
 // }
 // h4{
-// 	@include typo-rhythm();
+// 	@include typographic-rhythm();
 // }
 // h5{
-// 	@include typo-rhythm();
+// 	@include typographic-rhythm();
 // }
 // h6{
-// 	@include typo-rhythm();
+// 	@include typographic-rhythm();
 // }
 // p, ul, ol, table, blockquote, a{
-// 	@include typo-rhythm();
+// 	@include typographic-rhythm();
 // }
 // ul ul, ol ol, ul ol, ol ul {
 // 	margin-top: 0;

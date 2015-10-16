@@ -4,22 +4,22 @@
 
 //////////////////////////////////////// VARIABLES
 
-// $level-factor - means exponent number of repeated multiplication of the scale factor (number >= 0 or 'auto')
+// $tr_level-factor - means exponent number of repeated multiplication of the scale factor (number >= 0 or 'auto')
 // It relates with scale of different text elements and defines how should one element should be bigger than common text
-// $base-font-size - in general this is the font size of common text in paragraph (in px)
-// $base-line-height - line height of common text in paragraph (number >= 1)
-// $scale-factor - defines scaling proportion of elements (number > 1)
+// $tr_base-font-size - in general this is the font size of common text in paragraph (in px)
+// $tr_base-line-height - line height of common text in paragraph (number >= 1)
+// $tr_scale-factor - defines scaling proportion of elements (number > 1)
 
 // Default settings
-$level-factor = 'auto'
-$base-font-size = 20px
-$base-line-height = 1.4
-$scale-factor = 1.5
+$tr_level-factor = 'auto'
+$tr_base-font-size = 20px
+$tr_base-line-height = 1.4
+$tr_scale-factor = 1.5
 
 
-//////////////////////////////////////// Typographic rhythm mixin
+//////////////////////////////////////// TYPOGRAPHYC RHYTHM MIXIN
 
-typo-rhythm($level = $level-factor, $base-fz = $base-font-size, $lh = $base-line-height, $scale = $scale-factor)
+typographic-rhythm($level = $tr_level-factor, $base-fz = $tr_base-font-size, $lh = $tr_base-line-height, $scale = $tr_scale-factor)
 
 	// Validate settings
 	if $lh < 1
@@ -107,25 +107,25 @@ typo-rhythm($level = $level-factor, $base-fz = $base-font-size, $lh = $base-line
 //////////////////////////////////////// GENERATED VERTICAL RHYTHM
 
 // h1
-// 	typo-rhythm()
+// 	typographic-rhythm()
 
 // h2
-// 	typo-rhythm()
+// 	typographic-rhythm()
 
 // h3
-// 	typo-rhythm()
+// 	typographic-rhythm()
 
 // h4
-// 	typo-rhythm()
+// 	typographic-rhythm()
 
 // h5
-// 	typo-rhythm()
+// 	typographic-rhythm()
 
 // h6
-// 	typo-rhythm()
+// 	typographic-rhythm()
 
 // p, ul, ol, table, blockquote, a
-// 	typo-rhythm()
+// 	typographic-rhythm()
 
 // ul ul, ol ol, ul ol, ol ul
 // 	margin-top 0

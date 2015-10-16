@@ -9,31 +9,31 @@ You can find [Demo](http://codepen.io/orlovmax/pen/jbGwYW) and [playground](http
 ## What we have
 There is one general mixin with a few options:
 
-`typo-rhythm($level-factor, $base-font-size, $base-line-height, $scale-factor)`
+`typographic-rhythm($level-factor, $base-font-size, $base-line-height, $scale-factor)`
 
-* $level-factor - means exponent number of repeated multiplication of the scale factor (number >= 0 or 'auto')
+* $tr_level-factor - means exponent number of repeated multiplication of the scale factor (number >= 0 or 'auto')
 It relates with scale of different text elements and defines how should one element should be bigger than common text
-* $base-font-size - in general this is the font size of common text in paragraph (in px)
-* $base-line-height - line height of common text in paragraph (number >= 1)
-* $scale-factor - defines scaling proportion of elements (number > 1)
+* $tr_base-font-size - in general this is the font size of common text in paragraph (in px)
+* $tr_base-line-height - line height of common text in paragraph (number >= 1)
+* $tr_scale-factor - defines scaling proportion of elements (number > 1)
 
 ## Usage with default settings (ex. SASS)
 ```sass
 // Defaults from mixin file
-$level-factor: 'auto'
-$base-font-size: 20px
-$base-line-height: 1.4
-$scale-factor: 1.5
+$tr_level-factor: 'auto'
+$tr_base-font-size: 20px
+$tr_base-line-height: 1.4
+$tr_scale-factor: 1.5
 
 // Demo style
 h1
-	+typo-rhythm()
+	+typographic-rhythm()
 h2
-	+typo-rhythm()
+	+typographic-rhythm()
 h3
-	+typo-rhythm()
+	+typographic-rhythm()
 p
-	+typo-rhythm()
+	+typographic-rhythm()
 ```
 
 In this example we use auto level mode, so we'll get the next css:
@@ -73,13 +73,13 @@ Let's see what changes if we'll use other settings. I'll change only level, but 
 ## Usage with manual settings (ex. SASS)
 ```sass
 h1
-	+typo-rhythm(4)
+	+typographic-rhythm(4)
 h2
-	+typo-rhythm(3)
+	+typographic-rhythm(3)
 h3
-	+typo-rhythm(0)
+	+typographic-rhythm(0)
 p
-	+typo-rhythm(0)
+	+typographic-rhythm(0)
 ```
 
 And generated css
