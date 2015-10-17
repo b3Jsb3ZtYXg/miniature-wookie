@@ -57,22 +57,22 @@ typographic-rhythm($level = $tr_level-factor, $base-fz = $tr_base-font-size, $lh
 		$parent = pseudo-parent()
 
 		// Compute some vaiables for different elements
-		if $parent == 'h1'
+		if match('h1', $parent) == true
 			$font-size = round($base-fz * ($scale ** 3))
 			$margin-top = $base-lh * 2
-		else if $parent == 'h2'
+		else if match('h2', $parent) == true
 			$font-size = round($base-fz * ($scale ** 2))
 			$margin-top = $base-lh * 2
-		else if $parent == 'h3'
+		else if match('h3', $parent) == true
 			$font-size = round($base-fz * ($scale ** 1))
 			$margin-top = $base-lh
-		else if $parent == 'h4'
+		else if match('h4', $parent) == true
 			$font-size = round($base-fz * math($scale, 'sqrt'))
 			$margin-top = $base-lh
-		else if $parent == 'h5'
+		else if match('h5', $parent) == true
 			$font-size = round($base-fz / math($scale, 'sqrt'))
 			$margin-top = $base-lh
-		else if $parent == 'h6'
+		else if match('h6', $parent) == true
 			$font-size = round($base-fz / ($scale ** 1))
 			$margin-top = $base-lh
 		else

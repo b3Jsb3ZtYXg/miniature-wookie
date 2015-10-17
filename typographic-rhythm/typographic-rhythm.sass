@@ -75,22 +75,22 @@ $tr_scale-factor: 1.5
 		$parent: inspect(#{&})
 
 		// Compute some vaiables for different elements
-		@if $parent == 'h1'
+		@if str-index($parent, 'h1') != null
 			$font-size: round($base-fz * _exp($scale, 3))
 			$margin-top: $base-lh * 2
-		@else if $parent == 'h2'
+		@else if str-index($parent, 'h2') != null
 			$font-size: round($base-fz * _exp($scale, 2))
 			$margin-top: $base-lh * 2
-		@else if $parent == 'h3'
+		@else if str-index($parent, 'h3') != null
 			$font-size: round($base-fz * _exp($scale, 1))
 			$margin-top: $base-lh
-		@else if $parent == 'h4'
+		@else if str-index($parent, 'h4') != null
 			$font-size: round($base-fz * _sqrt($scale))
 			$margin-top: $base-lh
-		@else if $parent == 'h5'
+		@else if str-index($parent, 'h5') != null
 			$font-size: round($base-fz / _sqrt($scale))
 			$margin-top: $base-lh
-		@else if $parent == 'h6'
+		@else if str-index($parent, 'h6') != null
 			$font-size: round($base-fz / _exp($scale, 1))
 			$margin-top: $base-lh
 		@else

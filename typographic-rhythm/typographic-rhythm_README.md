@@ -9,7 +9,7 @@ You can find [Demo](http://codepen.io/orlovmax/pen/jbGwYW) and [playground](http
 ## What we have
 There is one general mixin with a few options:
 
-`typographic-rhythm($level-factor, $base-font-size, $base-line-height, $scale-factor)`
+`typographic-rhythm($level: $tr_level-factor, $base-fz: $tr_base-font-size, $lh: $tr_base-line-height, $scale: $tr_scale-factor)`
 
 * $tr_level-factor - means exponent number of repeated multiplication of the scale factor (number >= 0 or 'auto')
 It relates with scale of different text elements and defines how should one element should be bigger than common text
@@ -40,30 +40,30 @@ In this example we use auto level mode, so we'll get the next css:
 
 ```css
 h1 {
-  font-size: 68px;
-  line-height: 84px;
-  margin-top: 56px;
-  margin-bottom: 28px;
+	font-size: 68px;
+	line-height: 84px;
+	margin-top: 56px;
+	margin-bottom: 28px;
 }
 
 h2 {
-  font-size: 45px;
-  line-height: 56px;
-  margin-top: 56px;
-  margin-bottom: 28px;
+	font-size: 45px;
+	line-height: 56px;
+	margin-top: 56px;
+	margin-bottom: 28px;
 }
 
 h3 {
-  font-size: 30px;
-  line-height: 56px;
-  margin-top: 28px;
-  margin-bottom: 28px;
+	font-size: 30px;
+	line-height: 56px;
+	margin-top: 28px;
+	margin-bottom: 28px;
 }
 p {
-  font-size: 20px;
-  line-height: 28px;
-  margin-top: 28px;
-  margin-bottom: 28px;
+	font-size: 20px;
+	line-height: 28px;
+	margin-top: 28px;
+	margin-bottom: 28px;
 }
 ```
 
@@ -85,30 +85,30 @@ p
 And generated css
 ```css
 h1 {
-  font-size: 101px;
-  line-height: 112px;
-  margin-top: 56px;
-  margin-bottom: 28px;
+	font-size: 101px;
+	line-height: 112px;
+	margin-top: 56px;
+	margin-bottom: 28px;
 }
 
 h2 {
-  font-size: 68px;
-  line-height: 84px;
-  margin-top: 56px;
-  margin-bottom: 28px;
+	font-size: 68px;
+	line-height: 84px;
+	margin-top: 56px;
+	margin-bottom: 28px;
 }
 
 h3 {
-  font-size: 20px;
-  line-height: 28px;
-  margin-top: 28px;
-  margin-bottom: 28px;
+	font-size: 20px;
+	line-height: 28px;
+	margin-top: 28px;
+	margin-bottom: 28px;
 }
 p {
-  font-size: 20px;
-  line-height: 28px;
-  margin-top: 28px;
-  margin-bottom: 28px;
+	font-size: 20px;
+	line-height: 28px;
+	margin-top: 28px;
+	margin-bottom: 28px;
 }
 ```
 
