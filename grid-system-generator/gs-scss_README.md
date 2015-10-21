@@ -24,7 +24,7 @@ $column_height: auto;
 
 Inner variables and defaults: 
 ```scss
-@mixin gs($gs_width, $gs_gutter-width, $gs_gutter-height, $gs_gutter-width-fallback)
+@mixin gs($gs_w, $gs_gutter-w, $gs_gutter-h, $gs_gutter-w-fallback)
 ```
 Example of usage: 
 ```scss
@@ -36,8 +36,8 @@ Example of usage:
 
 Inner variables and defaults: 
 ```scss
-@mixin gs-column($column_count, $column_total-count, $column_gutter-width, 
-            $column_gutter-height, $column-height, $column_gutter-width-fallback, $column_gutter-height-fallback, $gs-width, $position-method)
+@mixin gs-column($column_c, $column_total-c, $column_gutter-w, 
+            $column_gutter-h, $column-h, $column_gutter-w-fallback, $column_gutter-h-fallback, $gs-w, $pos-method)
 ```
 Example of usage: 
 ```scss
@@ -49,7 +49,7 @@ Example of usage:
 
 Inner variables and defaults: 
 ```scss
-@mixin gs-push( $column_count, $column_total-count, $column_gutter-width, $column_gutter-width-fallback, $gs_width)
+@mixin gs-push( $column_c, $column_total-c, $column_gutter-w, $column_gutter-w-fallback, $gs_w)
 ```
 Example of usage: 
 ```scss
@@ -61,7 +61,7 @@ Example of usage:
 
 Inner variables and defaults: 
 ```scss
-@mixin gs-pull( $column_count, $column_total-count, $column_gutter-width, $column_gutter-width-fallback, $gs_width)
+@mixin gs-pull( $column_c, $column_total-c, $column_gutter-w, $column_gutter-w-fallback, $gs_w)
 ```
 Example of usage: 
 ```scss
