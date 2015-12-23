@@ -1,3 +1,5 @@
+SASS mixins readme. Other preprocessor's readme placed in related files.
+
 **Test rgba background**, simple and useful mixin like in dev tools tools to see element's size, paddings and etc. By default it sets to 30% transparent red
 
 Inner variables and defaults:
