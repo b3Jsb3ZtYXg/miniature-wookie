@@ -32,43 +32,43 @@ $tr_bottom-space: 'margin'
 
 // Demo style
 h1
-	+typographic-rhythm()
+    +typographic-rhythm()
 h2
-	+typographic-rhythm()
+    +typographic-rhythm()
 h3
-	+typographic-rhythm()
+    +typographic-rhythm()
 p
-	+typographic-rhythm()
+    +typographic-rhythm()
 ```
 
 In this example we use auto level mode, so we'll get the next css:
 
 ```css
 h1 {
-	font-size: 68px;
-	line-height: 84px;
-	margin-top: 56px;
-	margin-bottom: 28px;
+    font-size: 68px;
+    line-height: 84px;
+    margin-top: 56px;
+    margin-bottom: 28px;
 }
 
 h2 {
-	font-size: 45px;
-	line-height: 56px;
-	margin-top: 56px;
-	margin-bottom: 28px;
+    font-size: 45px;
+    line-height: 56px;
+    margin-top: 56px;
+    margin-bottom: 28px;
 }
 
 h3 {
-	font-size: 30px;
-	line-height: 56px;
-	margin-top: 28px;
-	margin-bottom: 28px;
+    font-size: 30px;
+    line-height: 56px;
+    margin-top: 28px;
+    margin-bottom: 28px;
 }
 p {
-	font-size: 20px;
-	line-height: 28px;
-	margin-top: 28px;
-	margin-bottom: 28px;
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 28px;
+    margin-bottom: 28px;
 }
 ```
 
@@ -78,41 +78,41 @@ Let's see what changes if we'll use other settings.
 ## Usage with manual settings (ex. SASS)
 ```sass
 h1
-	+typographic-rhythm(4, $top: 'padding', $bottom: 'none')
+    +typographic-rhythm(4, $top: 'padding', $bottom: 'none')
 h2
-	+typographic-rhythm(3)
+    +typographic-rhythm(3)
 h3
-	+typographic-rhythm(0)
+    +typographic-rhythm(0)
 p
-	+typographic-rhythm(0)
+    +typographic-rhythm(0)
 ```
 
 And generated css
 ```css
 h1 {
-	font-size: 101px;
-	line-height: 112px;
-	padding-top: 56px;
+    font-size: 101px;
+    line-height: 112px;
+    padding-top: 56px;
 }
 
 h2 {
-	font-size: 68px;
-	line-height: 84px;
-	margin-top: 56px;
-	margin-bottom: 28px;
+    font-size: 68px;
+    line-height: 84px;
+    margin-top: 56px;
+    margin-bottom: 28px;
 }
 
 h3 {
-	font-size: 20px;
-	line-height: 28px;
-	margin-top: 28px;
-	margin-bottom: 28px;
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 28px;
+    margin-bottom: 28px;
 }
 p {
-	font-size: 20px;
-	line-height: 28px;
-	margin-top: 28px;
-	margin-bottom: 28px;
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 28px;
+    margin-bottom: 28px;
 }
 ```
 
@@ -144,11 +144,11 @@ $tr_bottom-space: 'margin'
 
 // Demo style
 h1
-	+typographic-rhythm($top: 'none', $bottom: 'padding')
-	+typographic-space($top: 'padding')
+    +typographic-rhythm($top: 'none', $bottom: 'padding')
+    +typographic-space($top: 'padding')
 
 ul
-	+typographic-space($top: 'padding')
+    +typographic-space($top: 'padding')
 
 ```
 
@@ -156,15 +156,15 @@ In this example we use auto level mode, so we'll get the next css:
 
 ```css
 h1 {
-	font-size: 68px;
-	line-height: 84px;
-	padding-top: 56px;
-	padding-bottom: 28px;
+    font-size: 68px;
+    line-height: 84px;
+    padding-top: 56px;
+    padding-bottom: 28px;
 }
 
 ul{
-	padding-top: 28px;
-	margin-bottom: 28px;
+    padding-top: 28px;
+    margin-bottom: 28px;
 }
 ```
 
